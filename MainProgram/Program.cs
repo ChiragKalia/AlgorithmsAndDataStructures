@@ -16,12 +16,15 @@ namespace Algorithms.MainProgram
 
             PatternsTests patternsTests = new PatternsTests();
             //patternsTests.TestTriangularPattern(5);
-            patternsTests.TestPrintMyNamesFirstCharacter(5);
+            //patternsTests.TestPrintMyNamesFirstCharacter(5);
+
+            //Print Pyramid
+            patternsTests.TestPrintPyramid();
 
             //Test Arrays
 
             //ArraysTests arraysTests = new ArraysTests();
-            
+
             //Test Array Reversal
             //arraysTests.TestReversedArrays(new int[5]{1,2,4,5,6});
 

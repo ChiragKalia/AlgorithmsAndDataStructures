@@ -39,5 +39,24 @@ namespace Algorithms.AbstractProblems
             }
             Console.Read();
         }
+        public static void PrintPyramid(int numberOfLines)
+        {
+            for (int i = 1; i <= numberOfLines; i++)
+            {
+                for (int space = 1; space <= numberOfLines - i; space++)
+                {
+                    Console.Write(" ");
+                }
+                for (int Number = 1; Number <= i; Number++)
+                {
+                    Console.Write("*");
+                }
+                for (int Number = i - 1; Number >= 1; Number--)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

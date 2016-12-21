@@ -10,3 +10,15 @@ E:\Projects\Algorithms\MainProgram\obj\Debug\MainProgram.exe
 E:\Projects\Algorithms\MainProgram\obj\Debug\MainProgram.pdb
 E:\Projects\Algorithms\MainProgram\bin\Debug\AbstractProblems.dll
 E:\Projects\Algorithms\MainProgram\bin\Debug\AbstractProblems.pdb
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\MainProgram.exe.config
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\MainProgram.exe
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\MainProgram.pdb
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\AbstractProblems.dll
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\Algorithms.dll
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\DataStructures.dll
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\AbstractProblems.pdb
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\Algorithms.pdb
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\bin\Debug\DataStructures.pdb
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\obj\Debug\MainProgram.csprojResolveAssemblyReference.cache
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\obj\Debug\MainProgram.exe
+E:\Projects\AlgorithmsAndDataStructures\MainProgram\obj\Debug\MainProgram.pdb

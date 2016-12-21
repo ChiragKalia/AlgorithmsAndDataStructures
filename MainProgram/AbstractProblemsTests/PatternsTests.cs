@@ -18,6 +18,13 @@ namespace Algorithms.MainProgram
         {
             Patterns.PrintMyName(size);
         }
-
+        public void TestPrintPyramid()
+        {
+            Console.Write("Pyramid Size : ");
+            int t = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Patterns.PrintPyramid(t);
+            Console.ReadLine();
+        }
     }
 }

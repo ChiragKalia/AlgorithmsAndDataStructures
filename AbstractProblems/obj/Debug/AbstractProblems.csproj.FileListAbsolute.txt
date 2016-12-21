@@ -3,3 +3,8 @@ E:\Projects\Algorithms\AbstractProblems\bin\Debug\AbstractProblems.pdb
 E:\Projects\Algorithms\AbstractProblems\obj\Debug\AbstractProblems.csprojResolveAssemblyReference.cache
 E:\Projects\Algorithms\AbstractProblems\obj\Debug\AbstractProblems.dll
 E:\Projects\Algorithms\AbstractProblems\obj\Debug\AbstractProblems.pdb
+E:\Projects\AlgorithmsAndDataStructures\AbstractProblems\bin\Debug\AbstractProblems.dll
+E:\Projects\AlgorithmsAndDataStructures\AbstractProblems\bin\Debug\AbstractProblems.pdb
+E:\Projects\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.csprojResolveAssemblyReference.cache
+E:\Projects\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.dll
+E:\Projects\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.pdb
