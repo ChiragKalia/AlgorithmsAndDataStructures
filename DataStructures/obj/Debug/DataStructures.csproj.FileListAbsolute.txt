@@ -5,6 +5,6 @@ E:\Projects\Algorithms\DataStructures\obj\Debug\DataStructures.pdb
 E:\Projects\Algorithms\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
 E:\Projects\AlgorithmsAndDataStructures\DataStructures\bin\Debug\DataStructures.dll
 E:\Projects\AlgorithmsAndDataStructures\DataStructures\bin\Debug\DataStructures.pdb
-E:\Projects\AlgorithmsAndDataStructures\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
 E:\Projects\AlgorithmsAndDataStructures\DataStructures\obj\Debug\DataStructures.dll
 E:\Projects\AlgorithmsAndDataStructures\DataStructures\obj\Debug\DataStructures.pdb
+E:\Projects\AlgorithmsAndDataStructures\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
