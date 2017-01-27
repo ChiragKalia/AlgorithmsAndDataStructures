@@ -7,3 +7,4 @@ E:\Projects\AlgorithmsAndDataStructures\Algorithms\bin\Debug\Algorithms.dll
 E:\Projects\AlgorithmsAndDataStructures\Algorithms\bin\Debug\Algorithms.pdb
 E:\Projects\AlgorithmsAndDataStructures\Algorithms\obj\Debug\Algorithms.dll
 E:\Projects\AlgorithmsAndDataStructures\Algorithms\obj\Debug\Algorithms.pdb
+E:\Projects\AlgorithmsAndDataStructures\Algorithms\obj\Debug\Algorithms.csprojResolveAssemblyReference.cache
