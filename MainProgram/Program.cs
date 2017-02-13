@@ -32,22 +32,32 @@ namespace Algorithms.MainProgram
             //{
             //    Console.WriteLine(i);
             //}
-            
-            string[] NM = Console.ReadLine().Split(' '); //Get length of array and operations to be performa
-            int N = Convert.ToInt32(NM[0]);
-            int M = Convert.ToInt32(NM[1]);
-            int[,] opArray = new int[M, 3];
-            for (int i = 0; i < M; i++)
+
+            //string[] NM = Console.ReadLine().Split(' '); //Get length of array and operations to be performa
+            //int N = Convert.ToInt32(NM[0]);
+            //int M = Convert.ToInt32(NM[1]);
+            //int[,] opArray = new int[M, 3];
+            //for (int i = 0; i < M; i++)
+            //{
+            //   string[] arr= Console.ReadLine().Split(' ');
+            //    for(int j=0; j<3; j++)
+            //    {
+            //        opArray[i, j] = Convert.ToInt32(arr[j]);
+            //    } 
+            //}
+            //AlgorithmsCrush crush = new AlgorithmsCrush();
+            //int result = crush.GetHighestValueFromArray(N, M, opArray);
+            //Console.WriteLine(result);
+            int length = Convert.ToInt32(Console.ReadLine());
+            string[] arr = Console.ReadLine().ToString().Split(' ');
+            List<int> list = new List<int>();
+            for (int i = 0; i<arr.Length; i++)
             {
-               string[] arr= Console.ReadLine().Split(' ');
-                for(int j=0; j<3; j++)
-                {
-                    opArray[i, j] = Convert.ToInt32(arr[j]);
-                } 
+                list.Add(Convert.ToInt32(arr[i]));
             }
-            AlgorithmsCrush crush = new AlgorithmsCrush();
-            int result = crush.GetHighestValueFromArray(N, M, opArray);
-            Console.WriteLine(result);
+            PoisonousPlants plants = new PoisonousPlants();
+            int count = plants.countNumberOfDays(length, list);
+            Console.WriteLine(count);
             Console.Read();
         }
 

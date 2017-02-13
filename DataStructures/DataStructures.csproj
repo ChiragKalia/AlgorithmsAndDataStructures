@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Arrays\AddTwoArrays.cs" />
     <Compile Include="Arrays\Arrays.cs" />
+    <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\SortedArray.cs" />
     <Compile Include="Arrays\SparseArray.cs" />
