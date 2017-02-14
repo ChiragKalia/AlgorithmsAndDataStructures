@@ -7,6 +7,7 @@ using Algorithms.DataStructures;
 using MainProgram.DataStructuresTests;
 using DataStructures.Arrays;
 using MainProgram.AlgorithmsTests;
+using Algorithms.Warmup;
 
 namespace Algorithms.MainProgram
 {
@@ -14,50 +15,15 @@ namespace Algorithms.MainProgram
     {
             static void Main(string[] args)
             {
-            //int n = Convert.ToInt32(Console.ReadLine());
-            //string[] A = new string[n];
-            //for (int i = 0; i<n; i++)
-            //{
-            //    A[i] = Console.ReadLine();
-            //}
-            //int q= Convert.ToInt32(Console.ReadLine());
-            //string[] QA = new string[q];
-            //for (int i = 0; i < q; i++)
-            //{
-            //    QA[i] = Console.ReadLine();
-            //}
-            //SparseArray array = new SparseArray();
-            //int[] arr = array.calculateSparseArray(n, q, A, QA);
-            //foreach (int i in arr)
-            //{
-            //    Console.WriteLine(i);
-            //}
-
-            //string[] NM = Console.ReadLine().Split(' '); //Get length of array and operations to be performa
-            //int N = Convert.ToInt32(NM[0]);
-            //int M = Convert.ToInt32(NM[1]);
-            //int[,] opArray = new int[M, 3];
-            //for (int i = 0; i < M; i++)
-            //{
-            //   string[] arr= Console.ReadLine().Split(' ');
-            //    for(int j=0; j<3; j++)
-            //    {
-            //        opArray[i, j] = Convert.ToInt32(arr[j]);
-            //    } 
-            //}
-            //AlgorithmsCrush crush = new AlgorithmsCrush();
-            //int result = crush.GetHighestValueFromArray(N, M, opArray);
-            //Console.WriteLine(result);
             int length = Convert.ToInt32(Console.ReadLine());
             string[] arr = Console.ReadLine().ToString().Split(' ');
-            List<int> list = new List<int>();
-            for (int i = 0; i<arr.Length; i++)
+            int[] A = Array.ConvertAll(arr, Int32.Parse);
+            PlusMinus pm = new PlusMinus();
+            string[] output = pm.CountFractions(length, A);
+            foreach(string i in output)
             {
-                list.Add(Convert.ToInt32(arr[i]));
+                Console.WriteLine(i);
             }
-            PoisonousPlants plants = new PoisonousPlants();
-            int count = plants.countNumberOfDays(length, list);
-            Console.WriteLine(count);
             Console.Read();
         }
 
