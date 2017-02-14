@@ -13,6 +13,7 @@ namespace Algorithms.MainProgram
 {
     public class Program
     {
+	    
             static void Main(string[] args)
             {
             int length = Convert.ToInt32(Console.ReadLine());
