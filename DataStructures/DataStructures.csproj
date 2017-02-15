@@ -45,6 +45,7 @@
     <Compile Include="Arrays\Arrays.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
+    <Compile Include="Arrays\Sort2DArray.cs" />
     <Compile Include="Arrays\SortedArray.cs" />
     <Compile Include="Arrays\SparseArray.cs" />
     <Compile Include="LinkedLists\LinkedList.cs" />
