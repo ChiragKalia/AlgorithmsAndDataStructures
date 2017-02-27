@@ -30,7 +30,7 @@ namespace DataStructures.LinkedLists
             {
                 headNode = new Node(data);
             }
-            else if(data< headNode.data)
+            else if (data < headNode.data)
             {
                 AddToBeginning(data);
             }
@@ -54,7 +54,7 @@ namespace DataStructures.LinkedLists
         }
         public void Print()
         {
-            if(headNode != null)
+            if (headNode != null)
             {
                 headNode.Print();
             }
@@ -72,7 +72,7 @@ namespace DataStructures.LinkedLists
         public void Print()
         {
             Console.Write("|" + data + "|->");
-            if(next != null)
+            if (next != null)
             {
                 next.Print();
             }
@@ -109,4 +109,5 @@ namespace DataStructures.LinkedLists
             }
         }
     }
+
 }
