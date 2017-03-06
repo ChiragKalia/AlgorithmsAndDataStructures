@@ -59,7 +59,11 @@ namespace Algorithms.MainProgram
 
             //Get Binary Number from Decimal
             DecimalToBinary tool = new DecimalToBinary();
-            Console.WriteLine("Binary Conversion of 125 is "+tool.GetBinaryFromDecimal(125));
+            //Console.WriteLine("Binary Conversion of 125 is " + tool.GetBinaryFromDecimal(125));
+            string output = tool.GetBinaryFromDecimal(4294967295);
+            long input = Convert.ToInt64(output);
+            ReturnNumberOfOnesInBinary binary = new ReturnNumberOfOnesInBinary();
+            Console.WriteLine("Number of one's is " + binary.numSetBits(input));
             Console.ReadLine();
 
         }

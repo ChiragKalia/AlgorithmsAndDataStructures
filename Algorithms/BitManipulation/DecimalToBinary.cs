@@ -8,12 +8,12 @@ namespace Algorithms.BitManipulation
 {
     public class DecimalToBinary
     {
-        public string GetBinaryFromDecimal(int n)
+        public string GetBinaryFromDecimal(long n)
         {
             string binaryNumber = "";
             while(n>0)
             {
-                int rem = n%2;
+                int rem = (int)n%2;
                 if(rem==0)
                 {
                     binaryNumber = "0"+binaryNumber;
