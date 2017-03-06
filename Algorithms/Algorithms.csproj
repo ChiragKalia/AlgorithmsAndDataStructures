@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmsCrush\AlgorithmsCrush.cs" />
+    <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Searching\BinarySearching.cs" />
     <Compile Include="Sorting\InsertionSorter.cs" />

@@ -10,6 +10,7 @@ using DataStructures.LinkedLists;
 using MainProgram.AlgorithmsTests;
 using AbstractProblems.MarcsCakewalk;
 using Algorithms.Searching;
+using Algorithms.BitManipulation;
 //using DataStructures.LinkedLists;
 
 namespace Algorithms.MainProgram
@@ -48,13 +49,17 @@ namespace Algorithms.MainProgram
             //    Console.WriteLine();
             //}
 
-            BinarySearching searching = new BinarySearching();
-            int n = Convert.ToInt32(Console.ReadLine());
-            string[] arr = Console.ReadLine().Split(' '); //Get the sorted array from user seperated by space
-            int[] A = Array.ConvertAll(arr, Int32.Parse);
-            int x = Convert.ToInt32(Console.ReadLine());
-            int index = searching.GetElementIndex(A, n, x);
-            Console.WriteLine("Element Index is " + index);
+            //BinarySearching searching = new BinarySearching();
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] arr = Console.ReadLine().Split(' '); //Get the sorted array from user seperated by space
+            //int[] A = Array.ConvertAll(arr, Int32.Parse);
+            //int x = Convert.ToInt32(Console.ReadLine());
+            //int index = searching.GetElementIndex(A, n, x);
+            //Console.WriteLine("Element Index is " + index);
+
+            //Get Binary Number from Decimal
+            DecimalToBinary tool = new DecimalToBinary();
+            Console.WriteLine("Binary Conversion of 125 is "+tool.GetBinaryFromDecimal(125));
             Console.ReadLine();
 
         }
