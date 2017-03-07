@@ -8,6 +8,10 @@ namespace Algorithms.BitManipulation
 {
     public class DecimalToBinary
     {
+        //<summary>
+        // A function that returns binary representation of a decimal number //E.g 3 to 011
+        //</summary>
+        //<param name="n">Decimal number</param>
         public string GetBinaryFromDecimal(long n)
         {
             string binaryNumber = "";
