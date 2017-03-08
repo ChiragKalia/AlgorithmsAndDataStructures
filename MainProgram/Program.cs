@@ -11,6 +11,7 @@ using MainProgram.AlgorithmsTests;
 using AbstractProblems.MarcsCakewalk;
 using Algorithms.Searching;
 using Algorithms.BitManipulation;
+using AbstractProblems.Fibonacci_Series;
 //using DataStructures.LinkedLists;
 
 namespace Algorithms.MainProgram
@@ -56,16 +57,9 @@ namespace Algorithms.MainProgram
             //int x = Convert.ToInt32(Console.ReadLine());
             //int index = searching.GetElementIndex(A, n, x);
             //Console.WriteLine("Element Index is " + index);
-
-            //Get Binary Number from Decimal
-            //DecimalToBinary tool = new DecimalToBinary();
-            //Console.WriteLine("Binary Conversion of 125 is " + tool.GetBinaryFromDecimal(125));
-            //string output = tool.GetBinaryFromDecimal(4294967295);
-            //long input = Convert.ToInt64(output);
-            //ReturnNumberOfOnesInBinary binary = new ReturnNumberOfOnesInBinary();
-            //Console.WriteLine("Number of one's is " + binary.numSetBits(input));
-            SingleNumber num = new SingleNumber();
-            Console.WriteLine("Non duplicate number is "+num.singleNumber(new List<int> { 1, 2, 2, 3, 1 }));
+            int n = 10;
+            FibonacciSeriesUsingRecursion fibonacci = new FibonacciSeriesUsingRecursion(n+1);
+            Console.WriteLine("Output: "+fibonacci.Fib(n));
             Console.ReadLine();
 
         }
