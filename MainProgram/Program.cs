@@ -12,6 +12,8 @@ using AbstractProblems.MarcsCakewalk;
 using Algorithms.Searching;
 using Algorithms.BitManipulation;
 using AbstractProblems.Fibonacci_Series;
+using DataStructures.Trees;
+using static DataStructures.Trees.BinarySearchTree;
 //using DataStructures.LinkedLists;
 
 namespace Algorithms.MainProgram
@@ -57,9 +59,24 @@ namespace Algorithms.MainProgram
             //int x = Convert.ToInt32(Console.ReadLine());
             //int index = searching.GetElementIndex(A, n, x);
             //Console.WriteLine("Element Index is " + index);
-            int n = 10;
-            FibonacciSeriesUsingRecursion fibonacci = new FibonacciSeriesUsingRecursion(n+1);
-            Console.WriteLine("Output: "+fibonacci.Fib(n));
+            //Fibonacci
+            //int n = 10;
+            //FibonacciSeriesUsingRecursion fibonacci = new FibonacciSeriesUsingRecursion(n+1);
+            //Console.WriteLine("Output: "+fibonacci.Fib(n));
+            BinarySearchTree bst = new BinarySearchTree();
+            BSTNode root = null;
+            root = bst.Insert(root, 15); root = bst.Insert(root, 10); root = bst.Insert(root, 20);
+            root = bst.Insert(root, 25); root = bst.Insert(root, 8); root = bst.Insert(root, 12);
+            Console.WriteLine("Enter Number To Be Searched: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            if(bst.Search(root,number) == true)
+            {
+                Console.WriteLine("Found");
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
             Console.ReadLine();
 
         }
