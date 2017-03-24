@@ -40,22 +40,77 @@ namespace DataStructures.Trees
         }
         public bool Search(BSTNode root, int data)
         {
-            if(root==null)
+            if (root == null)
             {
                 return false;
             }
-            if(root.data==data)
+            if (root.data == data)
             {
                 return true;
             }
-            else if(data<= root.data)
+            else if (data <= root.data)
             {
                 return Search(root.left, data);
             }
             else
             {
-                return Search(root.right, data); 
+                return Search(root.right, data);
             }
+        }
+        public BSTNode Delete(BSTNode root, int data)
+        {
+            if(root==null)
+            {
+                return root;
+            }
+            if (data <= root.data)
+            {
+                Delete(root.left, data);
+            }
+            else if (data >= root.data)
+            {
+                Delete(root.right, data);
+            }
+            else //Node to be deleted found
+            {
+                //Case 1: No Child
+                if (root.left == null && root.right == null)
+                {
+                    root = null;
+
+                }
+                //Case 2: One Child
+                else if(root.left == null)
+                {
+                    BSTNode temp = root;
+                    root = root.right;
+                    temp = null;
+                }
+                else if (root.right == null)
+                {
+                    BSTNode temp = root;
+                    root = root.left;
+                    temp = null;
+                }
+                //Case 3: Two Children
+                else
+                {
+                    BSTNode temp = FindMin(root.right);
+                    root.data = temp.data;
+                    root.right = Delete(root.right, temp.data);
+                }
+            }
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            return root;
+        }
+        public BSTNode FindMin(BSTNode root)// Finds minimum value in the right subtree
+        {
+            while (root.right != null)
+            {
+                root = root.right;
+            }
+            return root;
         }
     }
 
