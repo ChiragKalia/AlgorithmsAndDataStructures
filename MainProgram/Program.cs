@@ -64,6 +64,7 @@ namespace Algorithms.MainProgram
             //FibonacciSeriesUsingRecursion fibonacci = new FibonacciSeriesUsingRecursion(n+1);
             //Console.WriteLine("Output: "+fibonacci.Fib(n));
             BinarySearchTree bst = new BinarySearchTree();
+
             BSTNode root = null;
             root = bst.Insert(root, 15); root = bst.Insert(root, 10); root = bst.Insert(root, 20);
             root = bst.Insert(root, 25); root = bst.Insert(root, 8); root = bst.Insert(root, 12);
@@ -77,6 +78,18 @@ namespace Algorithms.MainProgram
             {
                 Console.WriteLine("Not Found");
             }
+            Console.WriteLine("Do you want to delete a node? If yes then type the node data");
+            int numberToBeDeleted = Convert.ToInt32(Console.ReadLine());
+            root = bst.Delete(root, numberToBeDeleted);
+            if (bst.Search(root, numberToBeDeleted) == true)
+            {
+                Console.WriteLine("Found");
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
+
             Console.ReadLine();
 
         }

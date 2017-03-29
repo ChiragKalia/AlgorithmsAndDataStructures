@@ -63,11 +63,11 @@ namespace DataStructures.Trees
             {
                 return root;
             }
-            if (data <= root.data)
+            if (data < root.data)
             {
                 Delete(root.left, data);
             }
-            else if (data >= root.data)
+            else if (data > root.data)
             {
                 Delete(root.right, data);
             }
@@ -77,7 +77,6 @@ namespace DataStructures.Trees
                 if (root.left == null && root.right == null)
                 {
                     root = null;
-
                 }
                 //Case 2: One Child
                 else if(root.left == null)
@@ -90,7 +89,7 @@ namespace DataStructures.Trees
                 {
                     BSTNode temp = root;
                     root = root.left;
-                    temp = null;
+                    temp = null; 
                 }
                 //Case 3: Two Children
                 else
