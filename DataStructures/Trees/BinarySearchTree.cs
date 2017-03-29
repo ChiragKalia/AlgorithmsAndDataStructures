@@ -8,6 +8,7 @@ namespace DataStructures.Trees
 {
     public class BinarySearchTree
     {
+        
         public class BSTNode
         {
             public int data;
@@ -57,6 +58,7 @@ namespace DataStructures.Trees
                 return Search(root.right, data);
             }
         }
+        private BSTNode nodeParent = new BSTNode();
         public BSTNode Delete(BSTNode root, int data)
         {
             if(root==null)
@@ -65,11 +67,21 @@ namespace DataStructures.Trees
             }
             if (data < root.data)
             {
-                Delete(root.left, data);
+                if(root.left.data == data)
+                {
+                    //Node to be deleted is left of current node
+                    nodeParent = root;
+                }
+                root.left = Delete(root.left, data);
             }
             else if (data > root.data)
             {
-                Delete(root.right, data);
+                if (root.left.data == data)
+                {
+                    //Node to be deleted is right of current node
+                    nodeParent = root;
+                }
+                root.right = Delete(root.right, data);
             }
             else //Node to be deleted found
             {
@@ -77,6 +89,7 @@ namespace DataStructures.Trees
                 if (root.left == null && root.right == null)
                 {
                     root = null;
+                    return root;
                 }
                 //Case 2: One Child
                 else if(root.left == null)
@@ -84,12 +97,14 @@ namespace DataStructures.Trees
                     BSTNode temp = root;
                     root = root.right;
                     temp = null;
+                    return root;
                 }
                 else if (root.right == null)
                 {
                     BSTNode temp = root;
                     root = root.left;
-                    temp = null; 
+                    temp = null;
+                    return root;
                 }
                 //Case 3: Two Children
                 else
