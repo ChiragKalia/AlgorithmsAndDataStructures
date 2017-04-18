@@ -11,3 +11,4 @@ Prerequisites
 2) Visual Studio 
 
 
+Currently I am not using test cases to test various algorithms, Which is a bad practice. Sooner, I will start writing test cases for    every algorithm I write. Thanks.
