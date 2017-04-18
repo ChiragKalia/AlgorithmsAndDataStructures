@@ -63,14 +63,14 @@ namespace Algorithms.MainProgram
             //int n = 10;
             //FibonacciSeriesUsingRecursion fibonacci = new FibonacciSeriesUsingRecursion(n+1);
             //Console.WriteLine("Output: "+fibonacci.Fib(n));
-            BinarySearchTree bst = new BinarySearchTree();
+            //BinarySearchTree bst = new BinarySearchTree();
 
             BSTNode root = null;
             root = bst.Insert(root, 15); root = bst.Insert(root, 10); root = bst.Insert(root, 20);
             root = bst.Insert(root, 25); root = bst.Insert(root, 8); root = bst.Insert(root, 12);
             Console.WriteLine("Enter Number To Be Searched: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            if(bst.Search(root,number) == true)
+            if (bst.Search(root, number) == true)
             {
                 Console.WriteLine("Found");
             }
