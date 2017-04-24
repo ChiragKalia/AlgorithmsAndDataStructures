@@ -16,7 +16,7 @@ namespace DataStructures.Arrays
             int biggestNegativeNumber = Int32.MinValue; //This case also handles an array with all negative numbers. So it returns biggest negative number;
             for(int i=0; i<n; i++) // This is done using Kadane's algorithm which reduces the complexity to linear time. What an algo (y).
             {
-                if(A[i]>0)
+                if(A[i]>0) 
                 {
                     areAllNegativeNumbers = false;
                 }
@@ -45,3 +45,4 @@ namespace DataStructures.Arrays
         }
     }
 }
+
