@@ -13,7 +13,7 @@ namespace DataStructures.Arrays
             int maxSum = 0;
             int currentSum = 0;
             bool areAllNegativeNumbers = true;
-            int biggestNegativeNumber = Int32.MinValue;
+            int biggestNegativeNumber = Int32.MinValue; //This case also handles all negative numbers.
             for(int i=0; i<n; i++) // This is done using Kadane's algorithm which reduces the complexity to linear time. What an algo (y).
             {
                 if(A[i]>0)
