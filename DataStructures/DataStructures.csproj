@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Arrays\AddTwoArrays.cs" />
     <Compile Include="Arrays\Arrays.cs" />
+    <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\Sort2DArray.cs" />
@@ -51,7 +52,6 @@
     <Compile Include="LinkedLists\LinkedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BinarySearchTree.cs" />
-    <Compile Include="Trees\InorderSuccessorBST.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

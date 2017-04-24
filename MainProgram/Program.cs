@@ -65,31 +65,41 @@ namespace Algorithms.MainProgram
             //Console.WriteLine("Output: "+fibonacci.Fib(n));
             //BinarySearchTree bst = new BinarySearchTree();
 
-            BSTNode root = null;
-            root = bst.Insert(root, 15); root = bst.Insert(root, 10); root = bst.Insert(root, 20);
-            root = bst.Insert(root, 25); root = bst.Insert(root, 8); root = bst.Insert(root, 12);
-            Console.WriteLine("Enter Number To Be Searched: ");
-            int number = Convert.ToInt32(Console.ReadLine());
-            if (bst.Search(root, number) == true)
+            //BSTNode root = null;
+            //root = bst.Insert(root, 15); root = bst.Insert(root, 10); root = bst.Insert(root, 20);
+            //root = bst.Insert(root, 25); root = bst.Insert(root, 8); root = bst.Insert(root, 12);
+            //Console.WriteLine("Enter Number To Be Searched: ");
+            //int number = Convert.ToInt32(Console.ReadLine());
+            //if (bst.Search(root, number) == true)
+            //{
+            //    Console.WriteLine("Found");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Found");
+            //}
+            //Console.WriteLine("Do you want to delete a node? If yes then type the node data");
+            //int numberToBeDeleted = Convert.ToInt32(Console.ReadLine());
+            //root = bst.Delete(root, numberToBeDeleted);
+            //if (bst.Search(root, numberToBeDeleted) == true)
+            //{
+            //    Console.WriteLine("Found");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Found");
+            //}
+            string[] arr = Console.ReadLine().Split(' ');
+            int[] arrayWithCount = Array.ConvertAll(arr, Int32.Parse); //Array with count of elements
+            int numberOfElements = arrayWithCount[0];
+            int[] A = new int[numberOfElements];
+            for(int i=1; i<=numberOfElements; i++)
             {
-                Console.WriteLine("Found");
+                A[i - 1] = arrayWithCount[i]; //Insert all elements except the count
             }
-            else
-            {
-                Console.WriteLine("Not Found");
-            }
-            Console.WriteLine("Do you want to delete a node? If yes then type the node data");
-            int numberToBeDeleted = Convert.ToInt32(Console.ReadLine());
-            root = bst.Delete(root, numberToBeDeleted);
-            if (bst.Search(root, numberToBeDeleted) == true)
-            {
-                Console.WriteLine("Found");
-            }
-            else
-            {
-                Console.WriteLine("Not Found");
-            }
-
+            MaxSumContiguousSubarray maxSum = new MaxSumContiguousSubarray();
+            int result = maxSum.GetMaximumSum(A, numberOfElements);
+            Console.WriteLine(result);
             Console.ReadLine();
 
         }

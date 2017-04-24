@@ -185,8 +185,8 @@ namespace DataStructures.Trees
                     {
                         ancestor = ancestor.right;
                     }
-                    return successor; 
                 }
+                    return successor; 
             }
         }
     }
