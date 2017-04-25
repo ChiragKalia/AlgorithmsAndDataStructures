@@ -14,6 +14,7 @@ using Algorithms.BitManipulation;
 using AbstractProblems.Fibonacci_Series;
 using DataStructures.Trees;
 using static DataStructures.Trees.BinarySearchTree;
+using Algorithms.Sorting;
 //using DataStructures.LinkedLists;
 
 namespace Algorithms.MainProgram
@@ -89,19 +90,13 @@ namespace Algorithms.MainProgram
             //{
             //    Console.WriteLine("Not Found");
             //}
+            int count = Convert.ToInt32(Console.ReadLine());
             string[] arr = Console.ReadLine().Split(' ');
-            int[] arrayWithCount = Array.ConvertAll(arr, Int32.Parse); //Array with count of elements
-            int numberOfElements = arrayWithCount[0];
-            int[] A = new int[numberOfElements];
-            for(int i=1; i<=numberOfElements; i++)
-            {
-                A[i - 1] = arrayWithCount[i]; //Insert all elements except the count
-            }
-            MaxSumContiguousSubarray maxSum = new MaxSumContiguousSubarray();
-            int result = maxSum.GetMaximumSum(A, numberOfElements);
-            Console.WriteLine(result);
+            int[] A = Array.ConvertAll(arr, Int32.Parse); 
+            SelectionSort sort = new SelectionSort();
+            A = sort.performSelectionSort(A, count);
+            Console.WriteLine(A);
             Console.ReadLine();
-
         }
 
     }
