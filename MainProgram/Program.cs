@@ -92,10 +92,15 @@ namespace Algorithms.MainProgram
             //}
             int count = Convert.ToInt32(Console.ReadLine());
             string[] arr = Console.ReadLine().Split(' ');
-            int[] A = Array.ConvertAll(arr, Int32.Parse); 
-            SelectionSort sort = new SelectionSort();
-            A = sort.performSelectionSort(A, count);
+            int[] A = Array.ConvertAll(arr, Int32.Parse);
+            InsertionSorter sort = new InsertionSorter();
+            A = sort.performInsertionSort(A, count);
             Console.WriteLine(A);
+            Console.WriteLine("Sorted List: ");
+            foreach (int i in A)
+            {
+                Console.WriteLine(i);
+            }
             Console.ReadLine();
         }
 

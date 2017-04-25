@@ -8,37 +8,29 @@ namespace Algorithms.Sorting
 {
     public class InsertionSorter
     {
-        public int[] InsertionSortold(int[] A, int length)
+        public int[] performInsertionSort(int[] A, int n) //This function will sort an array using insertion sort.s
         {
-            for (int j = 1; j < length-1; j++)
+            int sortedIndex = 0;
+            for(int i=1; i<n; i++)
             {
-                int key = A[j];
-                int i = j-1;
-                while (i > 0 && A[i] > A[j])
+                if(A[i]<A[sortedIndex])
                 {
-                    A[i + 1] = A[i];
-                    i = i - 1;
-                    A[i] = key;
+                    int updatedIndex = i;
+                    while (sortedIndex < n && sortedIndex >=0)
+                    {
+                        if (A[updatedIndex] < A[sortedIndex])
+                        {
+                            int temp = A[sortedIndex];
+                            A[sortedIndex] = A[updatedIndex];
+                            A[updatedIndex] = temp;
+                            updatedIndex = sortedIndex;
+                        }
+                        sortedIndex -= 1;
+                    }
                 }
+                sortedIndex = i;
             }
             return A;
         }
-        public int[] InsertionSort(int[] A, int length)
-        {
-            for (int j = 1; j < length - 1; j++)
-            {
-                
-                int key = A[j];
-                int i = j;
-                while (i > 0 && A[i-1] > key)
-                {
-                    A[i] = A[i-1];
-                    i = i - 1;
-                }
-                A[i] = key;
-            }
-            return A;
-        }
-
     }
 }

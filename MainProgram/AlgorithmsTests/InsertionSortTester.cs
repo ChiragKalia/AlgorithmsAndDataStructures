@@ -15,7 +15,7 @@ namespace MainProgram.AlgorithmsTests
         }
         public void InsertionSortTest(int[] array)
         {
-            int[] output = sorter.InsertionSort(array, array.Length);
+            int[] output = sorter.performInsertionSort(array, array.Length);
             Console.WriteLine("Output : ");
             foreach (int i in output)
             {

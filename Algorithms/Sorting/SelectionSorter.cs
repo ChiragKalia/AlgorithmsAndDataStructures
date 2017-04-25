@@ -6,27 +6,26 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Sorting
 {
-    public class SelectionSort
+    public class SelectionSorter
     {
         public int[] performSelectionSort(int[] A, int n)
         {
             int start = 0;
             for(int i= start; i<n; i++)
             {
-                int minValue = Int32.MaxValue;
+                int maxValue = Int32.MaxValue;
                 int swapIndex = 0;
                 for(int j=start; j<n; j++)
                 {
-                    if(A[j]<minValue)
+                    if(A[j]< maxValue)
                     {
-                        minValue = A[j];
+                        maxValue = A[j];
                         swapIndex = j;
                     }
                 }
-                //Swap two numbers without using temp var
-                A[swapIndex] = A[swapIndex] + A[start];  //e.g 10+5=15; 
-                A[swapIndex] = A[swapIndex] - A[start]; //15-5 = 10;
-                A[start] = A[swapIndex] - A[start]; // 10-5 = 15;
+                int tempVal = A[start];
+                A[start] = maxValue;  //e.g 10+5=15; 
+                A[swapIndex] = tempVal;
                 start += 1;
             }
             return A;
