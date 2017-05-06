@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Arrays\AddTwoArrays.cs" />
     <Compile Include="Arrays\Arrays.cs" />
+    <Compile Include="Arrays\CommonElements.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />

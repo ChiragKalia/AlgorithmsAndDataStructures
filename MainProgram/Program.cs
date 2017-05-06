@@ -23,83 +23,23 @@ namespace Algorithms.MainProgram
     {
         static void Main(string[] args)
         {
-            //LinkedList list = new LinkedList();
-            //list.AddToEnd(9);
-            //list.AddToEnd(5);
-            //list.AddToEnd(7);
-            //list.AddToEnd(11);
-            //list.Print();
 
-            //int length = Convert.ToInt32(Console.ReadLine());
-            //int[,] A = new int[length, length];
-            //for (int i = 0; i < length; i++)
-            //{
-            //    string[] array = Console.ReadLine().Split(' ');
-            //    int[] arr = Array.ConvertAll(array, Int32.Parse);
-            //    for (int j = 0; j < length; j++)
-            //    {
-            //        A[i, j] = arr[j];
-            //    }
-            //}
-            //Sort2DArray sorter = new Sort2DArray();
-            //sorter.sort2DArray(ref A, length);
-            //Console.WriteLine("Printing Sorted Array");
-            //for (int i = 0; i < length; i++)
-            //{
-            //    for (int j = 0; j < length; j++)
-            //    {
-            //        Console.Write(A[i,j]);
-            //    }
-            //    Console.WriteLine();
-            //}
-
-            //BinarySearching searching = new BinarySearching();
-            //int n = Convert.ToInt32(Console.ReadLine());
-            //string[] arr = Console.ReadLine().Split(' '); //Get the sorted array from user seperated by space
-            //int[] A = Array.ConvertAll(arr, Int32.Parse);
-            //int x = Convert.ToInt32(Console.ReadLine());
-            //int index = searching.GetElementIndex(A, n, x);
-            //Console.WriteLine("Element Index is " + index);
-            //Fibonacci
-            //int n = 10;
-            //FibonacciSeriesUsingRecursion fibonacci = new FibonacciSeriesUsingRecursion(n+1);
-            //Console.WriteLine("Output: "+fibonacci.Fib(n));
-            //BinarySearchTree bst = new BinarySearchTree();
-
-            //BSTNode root = null;
-            //root = bst.Insert(root, 15); root = bst.Insert(root, 10); root = bst.Insert(root, 20);
-            //root = bst.Insert(root, 25); root = bst.Insert(root, 8); root = bst.Insert(root, 12);
-            //Console.WriteLine("Enter Number To Be Searched: ");
-            //int number = Convert.ToInt32(Console.ReadLine());
-            //if (bst.Search(root, number) == true)
-            //{
-            //    Console.WriteLine("Found");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Not Found");
-            //}
-            //Console.WriteLine("Do you want to delete a node? If yes then type the node data");
-            //int numberToBeDeleted = Convert.ToInt32(Console.ReadLine());
-            //root = bst.Delete(root, numberToBeDeleted);
-            //if (bst.Search(root, numberToBeDeleted) == true)
-            //{
-            //    Console.WriteLine("Found");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Not Found");
-            //}
-            int count = Convert.ToInt32(Console.ReadLine());
-            string[] arr = Console.ReadLine().Split(' ');
-            int[] A = Array.ConvertAll(arr, Int32.Parse);
-            InsertionSorter sort = new InsertionSorter();
-            A = sort.performInsertionSort(A, count);
-            Console.WriteLine(A);
-            Console.WriteLine("Sorted List: ");
-            foreach (int i in A)
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] A = new int[n, n];
+            for (int i =0; i< n; i++)
             {
-                Console.WriteLine(i);
+                string[] sArr = Console.ReadLine().Split(' ');
+                int[] arr = Array.ConvertAll(sArr, Int32.Parse);
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    A[i,j] = arr[j];
+                }
+            }
+            CommonElements elements = new CommonElements();
+            int[] output = elements.GetCommonElements(A,n);
+            foreach (var item in output)
+            {
+                Console.WriteLine(" " + item);
             }
             Console.ReadLine();
         }
