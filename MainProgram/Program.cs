@@ -36,7 +36,7 @@ namespace Algorithms.MainProgram
                 }
             }
             CommonElements elements = new CommonElements();
-            int[] output = elements.GetCommonElements(A,n);
+            int[] output = elements.GetCommonElementsUsingDictionary(A,n);
             foreach (var item in output)
             {
                 Console.WriteLine(" " + item);
