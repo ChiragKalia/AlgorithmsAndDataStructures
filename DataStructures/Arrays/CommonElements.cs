@@ -8,28 +8,6 @@ namespace DataStructures.Arrays
 {
     public class CommonElements
     {
-        //public int[] GetCommonElements(int[][] A)
-        //{
-        //    //int[] commonElements = new int[n];
-        //    int[] tempArr = null;
-        //    for (int i = 0; i < A.Count(); i++)
-        //    {
-
-        //        if (i == 0)
-        //        {
-        //            continue;
-        //        }
-        //        else
-        //        {
-        //            if (tempArr == null)
-        //                tempArr = A[i - 1];
-        //            else
-        //                tempArr = A[i].Intersect(tempArr).ToArray();
-        //        }               
-        //    }
-        //    return tempArr;
-        //}
-
         public int[] GetCommonElements(int[,] A, int n)
         {
             int[] commonElements = new int[n];
@@ -55,7 +33,7 @@ namespace DataStructures.Arrays
             return commonElements;
         }
 
-        public int[] GetCommonElementsUsingDictionary(int[,] A, int n)
+        public int[] GetCommonElementsUsingDictionary(int[,] A, int n) //Not Complete yet// Has Bug
         {
             int[] commonElements = new int[n];
             Dictionary<int, int> commonElementsDict = new Dictionary<int, int>();
