@@ -44,10 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractProblemsTests\PatternsTests.cs" />
-    <Compile Include="AlgorithmsTests\InsertionSortTester.cs" />
-    <Compile Include="AlgorithmsTests\MergeSortTester.cs" />
-    <Compile Include="DataStructuresTests\ArraysTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
