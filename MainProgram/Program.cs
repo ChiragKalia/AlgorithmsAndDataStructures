@@ -58,7 +58,7 @@ namespace Algorithms.MainProgram
             Console.WriteLine(" Original Matrix: ");
             PrintMatrix.Print1DMatrix(A, n);
             Console.WriteLine();
-            sortBinary.sortBinaryArray(A, n);
+            A = sortBinary.sortBinaryArray(A, n);
             Console.WriteLine(" Sorted Matrix: ");
             PrintMatrix.Print1DMatrix(A, n);
             Console.ReadLine();
