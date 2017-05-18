@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Helpers
 {
-    public class SwapVars
+    public static class SwapVars
     {
-        public void Swap(ref int a, ref int b)
+        public static void Swap(ref int a, ref int b)
         {
             int temp = a;
             a = b;

@@ -23,8 +23,8 @@ namespace Algorithms.MainProgram
         static void Main(string[] args)
         {
 
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[,] A = new int[n, n];
+            int n = 10;
+            int[] A = new int[10]{0,0,1,1,1,0,1,0,1,0 };
             //for (int i =0; i< n; i++)
             //{
             //    string[] sArr = Console.ReadLine().Split(' ');
@@ -40,21 +40,27 @@ namespace Algorithms.MainProgram
             //{
             //    Console.WriteLine(" " + item);
             //}
-            int count = 0;
-            for (int i=0; i<n; i++)
-            {
-                for(int j=0; j<n; j++)
-                {
-                    A[i, j] = count++;
-                }
-            }
+            //int count = 0;
+            //for (int i=0; i<n; i++)
+            //{
+            //    for(int j=0; j<n; j++)
+            //    {
+            //        A[i, j] = count++;
+            //    }
+            //}
+            //Console.WriteLine(" Original Matrix: ");
+            //PrintMatrix.Print2DMatrix(A, n);
+            //Console.WriteLine(" Rotated Matrix: ");
+            //RotateMatrixClockwise rotate = new RotateMatrixClockwise();
+            //rotate.RotateMatrix(ref A, n);
+            //PrintMatrix.Print2DMatrix(A, n);
+            BinaryArraySort sortBinary = new BinaryArraySort();
             Console.WriteLine(" Original Matrix: ");
-            PrintMatrix print = new PrintMatrix();
-            print.Print2DMatrix(A, n);
-            Console.WriteLine(" Rotated Matrix: ");
-            RotateMatrixClockwise rotate = new RotateMatrixClockwise();
-            rotate.RotateMatrix(ref A, n);
-            print.Print2DMatrix(A, n);
+            PrintMatrix.Print1DMatrix(A, n);
+            Console.WriteLine();
+            sortBinary.sortBinaryArray(A, n);
+            Console.WriteLine(" Sorted Matrix: ");
+            PrintMatrix.Print1DMatrix(A, n);
             Console.ReadLine();
         }
 

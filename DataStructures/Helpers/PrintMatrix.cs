@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Helpers
 {
-    public class PrintMatrix
+    public static class PrintMatrix
     {
-        public void Print2DMatrix(int[,] A, int n)
+        public static void Print2DMatrix(int[,] A, int n)
         {
             for(int i=0; i<n; i++)
             {
@@ -19,5 +19,13 @@ namespace DataStructures.Helpers
                 Console.WriteLine();
             }  
         }
+        public static void Print1DMatrix(int[] A, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(A[i] + " ");
+            }
+        }
+
     }
 }
