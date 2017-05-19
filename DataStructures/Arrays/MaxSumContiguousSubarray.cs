@@ -12,18 +12,18 @@ namespace DataStructures.Arrays
         {
             int maxSum = 0;
             int currentSum = 0;
-            bool areAllNegativeNumbers = true;
-            int biggestNegativeNumber = Int32.MinValue; //This case also handles an array with all negative numbers. So it returns biggest negative number;
+            //bool areAllNegativeNumbers = true;
+            //int biggestNegativeNumber = Int32.MinValue; //This case also handles an array with all negative numbers. So it returns biggest negative number;
             for(int i=0; i<n; i++) // This is done using Kadane's algorithm which reduces the complexity to linear time. What an algo (y).
             {
-                if(A[i]>0) 
-                {
-                    areAllNegativeNumbers = false;
-                }
-                else if (A[i] > biggestNegativeNumber)
-                {
-                    biggestNegativeNumber = A[i];
-                }
+                //if(A[i]>0) 
+                //{
+                //    areAllNegativeNumbers = false;
+                //}
+                //else if (A[i] > biggestNegativeNumber)
+                //{
+                //    biggestNegativeNumber = A[i];
+                //}
                 currentSum = currentSum + A[i];
                 if(currentSum < 0)
                 {
@@ -34,14 +34,14 @@ namespace DataStructures.Arrays
                     maxSum = currentSum;
                 }
             }
-            if(areAllNegativeNumbers == true)
-            {
-                return biggestNegativeNumber; //Returns biggest negative number from the list;
-            }
-            else
-            {
+            //if(areAllNegativeNumbers == true)
+            //{
+            //    return biggestNegativeNumber; //Returns biggest negative number from the list;
+            //}
+            //else
+            //{
                 return maxSum;  //Returns sum of maximum contiguous subarray
-            }
+            //}
         }
     }
 }
