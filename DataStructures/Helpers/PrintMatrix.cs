@@ -14,7 +14,14 @@ namespace DataStructures.Helpers
             {
                 for(int j=0; j<n; j++)
                 {
-                    Console.Write(A[i, j] + " ");
+                    if(A[i,j] <10)
+                    {
+                        Console.Write(A[i, j] + "  ");
+                    }
+                    else
+                    {
+                        Console.Write(A[i, j] + " ");
+                    }
                 }
                 Console.WriteLine();
             }  
