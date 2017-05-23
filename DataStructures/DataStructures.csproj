@@ -52,6 +52,7 @@
     <Compile Include="Arrays\Sort2DArray.cs" />
     <Compile Include="Arrays\SortedArray.cs" />
     <Compile Include="Arrays\SparseArray.cs" />
+    <Compile Include="Arrays\SphericalArrayInsertion.cs" />
     <Compile Include="Helpers\PrintMatrix.cs" />
     <Compile Include="Helpers\SwapVars.cs" />
     <Compile Include="LinkedLists\LinkedList.cs" />
