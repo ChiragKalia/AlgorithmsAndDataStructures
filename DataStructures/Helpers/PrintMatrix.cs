@@ -17,6 +17,10 @@ namespace DataStructures.Helpers
                 {
                     if(A[i,j] <10)
                     {
+                        Console.Write(A[i, j] + "   ");
+                    }
+                    else if(A[i,j]<100)
+                    {
                         Console.Write(A[i, j] + "  ");
                     }
                     else

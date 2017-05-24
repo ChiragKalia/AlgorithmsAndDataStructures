@@ -18,6 +18,7 @@ namespace DataStructures.Arrays
             int rowsProcessed = 0;
             int columnsProcessed = 0;
             int nrt = n / 2;
+            int nOrig = n;
             int LSI = 0, LEI = n;
             int TSI = 0, TEI = n;
             int count = 1;
@@ -27,7 +28,7 @@ namespace DataStructures.Arrays
                 {
                     if (i == TSI)
                     {
-                        for (int j = LSI; j < LEI; j++) // Will implement row by row * * * * * * * *
+                        for (int j = LSI; j < LEI; j++) // Will implement row by row from left to rights* * * * * * * *
                         {
                             A[i, j] = count++;
                         }
@@ -55,30 +56,30 @@ namespace DataStructures.Arrays
                     {
                         PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
                     }
-                    if (TSI == n - 1)
+                    if (i==TEI-1)
                     {
                         LSI = n - 2;
                         LEI = columnsProcessed;
-                        for (int j = LSI; j >= columnsProcessed; j--) // Will implement down up from left side
+                        for (int j = LSI; j >= columnsProcessed; j--) // Will implement row by row from right to left
                         {
                             A[i, j] = count++;
                         }
                         rowsProcessed++;
-                    }
-                    if (rowsProcessed > 0)
-                    {
-                        PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
+                        if (rowsProcessed > 0)
+                        {
+                            PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
+                        }
                     }
                 }
                 TSI = 0 + rowsProcessed;
-                TEI = n - rowsProcessed;
+                TEI = nOrig - rowsProcessed;
                 if(TEI-TSI == 1)
                 {
                     TEI++;
                 }
                 LSI = columnsProcessed;
                 LEI = LSI + 1;
-                for (int i = TEI; i >= TSI; i--)
+                for (int i = TEI-1; i >= TSI; i--)
                 {
                     for (int j = LSI; j < LEI; j++)
                     {
