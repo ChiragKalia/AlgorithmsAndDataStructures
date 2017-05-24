@@ -10,6 +10,7 @@ namespace DataStructures.Helpers
     {
         public static void Print2DMatrix(int[,] A, int n)
         {
+            Console.Clear();
             for(int i=0; i<n; i++)
             {
                 for(int j=0; j<n; j++)

@@ -15,99 +15,84 @@ namespace DataStructures.Arrays
         //           [7 6 5]
         public void InsertValuesSpirally(ref int[,] A, int n)
         {
-            int LSI = 0, TSI = 0;
-            int LEI = n, TEI = n;
-            int count = 1;
             int rowsProcessed = 0;
-            for (int i = TSI; i < TEI; i++)
+            int columnsProcessed = 0;
+            int nrt = n / 2;
+            int LSI = 0, LEI = n;
+            int TSI = 0, TEI = n;
+            int count = 1;
+            while (rowsProcessed < nrt)
             {
-                if(i== TSI)
+                for (int i = TSI; i < TEI; i++)
                 {
-                    for (int j = LSI; j < LEI; j++)
+                    if (i == TSI)
                     {
-                        A[i, j] = count++;
-                    } //Complete for first row.
-                    
-                    if (n > 2 && i == 0)
-                    {
-                        LSI = n - 1;
+                        for (int j = LSI; j < LEI; j++) // Will implement row by row * * * * * * * *
+                        {
+                            A[i, j] = count++;
+                        }
                     }
-                    else if (n == 2)
+                    if (rowsProcessed > 0)
                     {
-                        LSI = n - 1;
+                        PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
                     }
-                }
-                if(i>TSI && i!=n-1)
-                {
-                    for (int j = LSI; j < LEI; j++)
+                    if ((TEI - TSI) > 1)
                     {
-                        A[i, j] = count++;
-                    }
-                }
 
-                if (i==(n-1))
-                {
-                    for (int j = n - 1; j >= 0; j--)
+                        if (i == TSI)
+                        {
+                            i++;
+                        }
+                        TSI++;
+                        //TEI--;
+                        LSI = n - 1;
+                        for (int j = LSI; j < LEI; j++) // Will implement up down from right side
+                        {
+                            A[i, j] = count++;
+                        }
+                    }
+                    if(rowsProcessed>0)
                     {
-                        A[n - 1, j] = count++;
-                    } // For last row.
-                    LSI = 0; LEI = 1;
+                        PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
+                    }
+                    if (TSI == n - 1)
+                    {
+                        LSI = n - 2;
+                        LEI = columnsProcessed;
+                        for (int j = LSI; j >= columnsProcessed; j--) // Will implement down up from left side
+                        {
+                            A[i, j] = count++;
+                        }
+                        rowsProcessed++;
+                    }
+                    if (rowsProcessed > 0)
+                    {
+                        PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
+                    }
+                }
+                TSI = 0 + rowsProcessed;
+                TEI = n - rowsProcessed;
+                if(TEI-TSI == 1)
+                {
+                    TEI++;
+                }
+                LSI = columnsProcessed;
+                LEI = LSI + 1;
+                for (int i = TEI; i >= TSI; i--)
+                {
                     for (int j = LSI; j < LEI; j++)
                     {
                         A[i, j] = count++;
                     }
-                    PrintMatrix.Print2DMatrix(A, n);
-                    --n;
-                    ++rowsProcessed;
-                    i = rowsProcessed -1;
-                    ++TSI;
-                    --TEI;
-                    LSI = 0+ rowsProcessed;
-                    --LEI;
-                    
                 }
+                columnsProcessed++;
+                n--;
+                LSI = columnsProcessed;
+                LEI = n;
+                Console.WriteLine();
+                Console.WriteLine();
+                PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
             }
-
-
-            //Console.WriteLine(" ");
-            //if (n>2)
-            //{
-            //    for (int i = n - 1; i >= 0; i--)
-            //    {
-            //        A[n - 1, i] = count++;
-            //    }
-            //    //PrintMatrix.Print2DMatrix(A, n);
-            //    LSI = 0; LEI = 1;
-            //    TSI = 0; TEI = n - 2;
-            //    for (int i = TEI; i > TSI; i--)
-            //    {
-            //        if (i == 1)
-            //        {
-            //            LEI = n - 1;
-            //        }
-            //        for (int j = LSI; j < LEI; j++)
-            //        {
-            //            A[i, j] = count++;
-            //        }
-            //    }
-            //    LSI = n - 3; LEI = n - 2;
-            //    TSI = 2; TEI = n - 1;
-            //    for (int i = TSI; i < TEI; i++)
-            //    {
-            //        if (i == n - 2)
-            //        {
-            //            LSI = 0;
-            //        }
-            //        for (int j = LEI; j > LSI; j--)
-            //        {
-            //            A[i, j] = count++;
-            //        }
-            //    }
-            //}
-            //else if(n==2)
-            //{
-            //    A[1, 0] = count++;
-            //}
         }
     }
 }

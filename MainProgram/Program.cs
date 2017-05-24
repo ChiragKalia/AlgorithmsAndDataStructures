@@ -60,7 +60,7 @@ namespace Algorithms.MainProgram
             //A = sortBinary.sortBinaryArray(A, n);
             //Console.WriteLine(" Sorted Matrix: ");
             //PrintMatrix.Print1DMatrix(A, n);
-            int n = 7-1;
+            int n = 10;
             int[,] A = new int[n,n];
             SpiralArrayInsertion insertion = new SpiralArrayInsertion();
             insertion.InsertValuesSpirally(ref A, n);
