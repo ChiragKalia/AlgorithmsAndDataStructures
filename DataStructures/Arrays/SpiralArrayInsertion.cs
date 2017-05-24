@@ -95,5 +95,86 @@ namespace DataStructures.Arrays
                 PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
             }
         }
+        public List<List<int>> generateMatrix(int A)
+        {
+            int[,] arr = new int[A, A];
+            List <List<int>> mList = new List<List<int>>();
+            int rowsProcessed = 0;
+            int columnsProcessed = 0;
+            int nrt = A / 2;
+            int nOrig = A;
+            int LSI = 0, LEI = A;
+            int TSI = 0, TEI = A;
+            int count = 1;
+            while (rowsProcessed < nrt)
+            {
+                for (int i = TSI; i < TEI; i++)
+                {
+                    if (i == TSI)
+                    {
+                        for (int j = LSI; j < LEI; j++) // Will implement row by row from left to rights* * * * * * * *
+                        {
+                            arr[i, j] = count++;
+                        }
+                    }
+                    if ((TEI - TSI) > 1)
+                    {
+
+                        if (i == TSI)
+                        {
+                            i++;
+                        }
+                        TSI++;
+                        //TEI--;
+                        LSI = A - 1;
+                        for (int j = LSI; j < LEI; j++) // Will implement up down from right side
+                        {
+                            arr[i, j] = count++;
+                        }
+                    }
+                    if (i == TEI - 1)
+                    {
+                        LSI = A - 2;
+                        LEI = columnsProcessed;
+                        for (int j = LSI; j >= columnsProcessed; j--) // Will implement row by row from right to left
+                        {
+                            arr[i, j] = count++;
+                        }
+                        rowsProcessed++;
+                    }
+                }
+                TSI = 0 + rowsProcessed;
+                TEI = nOrig - rowsProcessed;
+                if (TEI - TSI == 1)
+                {
+                    TEI++;
+                }
+                LSI = columnsProcessed;
+                LEI = LSI + 1;
+                for (int i = TEI - 1; i >= TSI; i--)
+                {
+                    for (int j = LSI; j < LEI; j++)
+                    {
+                        arr[i, j] = count++;
+                    }
+                }
+                columnsProcessed++;
+                A--;
+                LSI = columnsProcessed;
+                LEI = A;
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+            for(int i=0; i< nOrig; i++)
+            {
+                List<int> subList = new List<int>(nOrig);
+                for(int j=0; j< nOrig; j++)
+                {
+                    subList.Add(arr[i, j]);
+                }
+                mList.Add(subList);
+            }
+            return mList;
+        }
     }
 }
