@@ -60,20 +60,11 @@ namespace Algorithms.MainProgram
             //A = sortBinary.sortBinaryArray(A, n);
             //Console.WriteLine(" Sorted Matrix: ");
             //PrintMatrix.Print1DMatrix(A, n);
-            int n = 7-2;
+            int n = 10;
             int[,] A = new int[n,n];
             SpiralArrayInsertion insertion = new SpiralArrayInsertion();
             insertion.InsertValuesSpirally(ref A, n);
-            //List<List<int>>  output = insertion.generateMatrix(n);
-            //foreach(List<int> row in output)
-            //{
-            //    foreach(int i in row)
-            //    {
-            //        Console.Write(i + " ");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //PrintMatrix.Print2DMatrix(A, n);
+            PrintMatrix.Print2DMatrix(A, n);
             Console.ReadLine();
         }
 

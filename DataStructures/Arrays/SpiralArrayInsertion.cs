@@ -18,6 +18,10 @@ namespace DataStructures.Arrays
             int rowsProcessed = 0;
             int columnsProcessed = 0;
             int nrt = n / 2;
+            if (n % 2 == 1)
+            {
+                nrt++;
+            }
             int nOrig = n;
             int LSI = 0, LEI = n;
             int TSI = 0, TEI = n;
@@ -32,10 +36,6 @@ namespace DataStructures.Arrays
                         {
                             A[i, j] = count++;
                         }
-                    }
-                    if (rowsProcessed > 0)
-                    {
-                        PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
                     }
                     if ((TEI - TSI) > 1)
                     {
@@ -52,11 +52,7 @@ namespace DataStructures.Arrays
                             A[i, j] = count++;
                         }
                     }
-                    if(rowsProcessed>0)
-                    {
-                        PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
-                    }
-                    if (i==TEI-1)
+                    if (i == TEI - 1)
                     {
                         LSI = n - 2;
                         LEI = columnsProcessed;
@@ -65,21 +61,17 @@ namespace DataStructures.Arrays
                             A[i, j] = count++;
                         }
                         rowsProcessed++;
-                        if (rowsProcessed > 0)
-                        {
-                            PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
-                        }
                     }
                 }
                 TSI = 0 + rowsProcessed;
                 TEI = nOrig - rowsProcessed;
-                if(TEI-TSI == 1)
-                {
-                    TEI++;
-                }
+                //if(TEI-TSI == 1)
+                //{
+                //    TEI++;
+                //}
                 LSI = columnsProcessed;
                 LEI = LSI + 1;
-                for (int i = TEI-1; i >= TSI; i--)
+                for (int i = TEI - 1; i >= TSI; i--)
                 {
                     for (int j = LSI; j < LEI; j++)
                     {
@@ -90,18 +82,19 @@ namespace DataStructures.Arrays
                 n--;
                 LSI = columnsProcessed;
                 LEI = n;
-                Console.WriteLine();
-                Console.WriteLine();
-                PrintMatrix.Print2DMatrix(A, (int)Math.Sqrt(A.Length));
             }
         }
-        public List<List<int>> generateMatrix(int A)
+        public List<List<int>> GenerateMatrix(int A)
         {
+            List<List<int>> mList = new List<List<int>>();
             int[,] arr = new int[A, A];
-            List <List<int>> mList = new List<List<int>>();
             int rowsProcessed = 0;
             int columnsProcessed = 0;
             int nrt = A / 2;
+            if (A % 2 == 1)
+            {
+                nrt++;
+            }
             int nOrig = A;
             int LSI = 0, LEI = A;
             int TSI = 0, TEI = A;
@@ -145,10 +138,10 @@ namespace DataStructures.Arrays
                 }
                 TSI = 0 + rowsProcessed;
                 TEI = nOrig - rowsProcessed;
-                if (TEI - TSI == 1)
-                {
-                    TEI++;
-                }
+                //if(TEI-TSI == 1)
+                //{
+                //    TEI++;
+                //}
                 LSI = columnsProcessed;
                 LEI = LSI + 1;
                 for (int i = TEI - 1; i >= TSI; i--)
@@ -162,13 +155,11 @@ namespace DataStructures.Arrays
                 A--;
                 LSI = columnsProcessed;
                 LEI = A;
-                Console.WriteLine();
-                Console.WriteLine();
             }
-            for(int i=0; i< nOrig; i++)
+            for (int i = 0; i < nOrig; i++)
             {
                 List<int> subList = new List<int>(nOrig);
-                for(int j=0; j< nOrig; j++)
+                for (int j = 0; j < nOrig; j++)
                 {
                     subList.Add(arr[i, j]);
                 }
