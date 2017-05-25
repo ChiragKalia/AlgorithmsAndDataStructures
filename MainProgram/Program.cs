@@ -60,11 +60,23 @@ namespace Algorithms.MainProgram
             //A = sortBinary.sortBinaryArray(A, n);
             //Console.WriteLine(" Sorted Matrix: ");
             //PrintMatrix.Print1DMatrix(A, n);
-            int n = 10;
-            int[,] A = new int[n,n];
-            SpiralArrayInsertion insertion = new SpiralArrayInsertion();
-            insertion.InsertValuesSpirally(ref A, n);
-            PrintMatrix.Print2DMatrix(A, n);
+
+            //Spherical Array Insertion
+
+            //int n = 10;
+            //int[,] A = new int[n,n];
+            //SpiralArrayInsertion insertion = new SpiralArrayInsertion();
+            //insertion.InsertValuesSpirally(ref A, n);
+            //PrintMatrix.Print2DMatrix(A, n);
+
+            //Maximum Hourglass Sum
+            int[][] arr = new int[6][];
+            for (int arr_i = 0; arr_i < 6; arr_i++)
+            {
+                string[] arr_temp = Console.ReadLine().Split(' ');
+                arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
+            }
+
             Console.ReadLine();
         }
 
