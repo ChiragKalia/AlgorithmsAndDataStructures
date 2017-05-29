@@ -73,15 +73,24 @@ namespace Algorithms.MainProgram
             //PrintMatrix.Print2DMatrix(A, n);
 
             //Maximum Hourglass Sum
-            int[][] arr = new int[6][];
-            for (int arr_i = 0; arr_i < 6; arr_i++)
-            {
-                string[] arr_temp = Console.ReadLine().Split(' ');
-                arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
-            }
-            MaximumHourglassSum hourGlassSum = new MaximumHourglassSum();
-            int maxSum = hourGlassSum.GetMaximumHourglassSum(arr);
-            Console.WriteLine("Max Sum: " + maxSum);
+            //int[][] arr = new int[6][];
+            //for (int arr_i = 0; arr_i < 6; arr_i++)
+            //{
+            //    string[] arr_temp = Console.ReadLine().Split(' ');
+            //    arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
+            //}
+            //MaximumHourglassSum hourGlassSum = new MaximumHourglassSum();
+            //int maxSum = hourGlassSum.GetMaximumHourglassSum(arr);
+            //Console.WriteLine("Max Sum: " + maxSum);
+
+            string[] arr_temp = Console.ReadLine().Split(' ');
+            int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
+            List<int> A = arr.ToList();
+            int n = A[0];
+            A.RemoveAt(0);
+            MaximumDistance distance = new MaximumDistance();
+            int maxDistance = distance.GetMaximumDiff(A);
+            Console.WriteLine("Maximum Distance: "+maxDistance);
             Console.ReadLine();
         }
 

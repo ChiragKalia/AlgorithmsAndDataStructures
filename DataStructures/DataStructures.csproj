@@ -45,6 +45,7 @@
     <Compile Include="Arrays\Arrays.cs" />
     <Compile Include="Arrays\BinaryArraySort.cs" />
     <Compile Include="Arrays\CommonElements.cs" />
+    <Compile Include="Arrays\MaximumDistance.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
