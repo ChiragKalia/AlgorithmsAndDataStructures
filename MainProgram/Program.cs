@@ -22,6 +22,8 @@ namespace Algorithms.MainProgram
     {
         static void Main(string[] args)
         {
+            //int n = 10;
+            //int[,] A = new int[n, n];
             //for (int i =0; i< n; i++)
             //{
             //    string[] sArr = Console.ReadLine().Split(' ');
@@ -37,6 +39,7 @@ namespace Algorithms.MainProgram
             //{
             //    Console.WriteLine(" " + item);
             //}
+
             //int count = 1;
             //for (int i = 0; i < n; i++)
             //{
@@ -64,7 +67,7 @@ namespace Algorithms.MainProgram
             //Spherical Array Insertion
 
             //int n = 10;
-            //int[,] A = new int[n,n];
+            //int[,] A = new int[n, n];
             //SpiralArrayInsertion insertion = new SpiralArrayInsertion();
             //insertion.InsertValuesSpirally(ref A, n);
             //PrintMatrix.Print2DMatrix(A, n);
@@ -76,7 +79,9 @@ namespace Algorithms.MainProgram
                 string[] arr_temp = Console.ReadLine().Split(' ');
                 arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
             }
-
+            MaximumHourglassSum hourGlassSum = new MaximumHourglassSum();
+            int maxSum = hourGlassSum.GetMaximumHourglassSum(arr);
+            Console.WriteLine("Max Sum: " + maxSum);
             Console.ReadLine();
         }
 
