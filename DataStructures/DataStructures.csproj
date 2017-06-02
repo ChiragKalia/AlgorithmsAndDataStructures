@@ -48,6 +48,7 @@
     <Compile Include="Arrays\MaximumDistance.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
+    <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\RotateMatrixClockwise.cs" />

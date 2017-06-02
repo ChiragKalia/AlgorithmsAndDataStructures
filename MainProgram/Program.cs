@@ -82,15 +82,20 @@ namespace Algorithms.MainProgram
             //MaximumHourglassSum hourGlassSum = new MaximumHourglassSum();
             //int maxSum = hourGlassSum.GetMaximumHourglassSum(arr);
             //Console.WriteLine("Max Sum: " + maxSum);
-
-            string[] arr_temp = Console.ReadLine().Split(' ');
-            int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
-            List<int> A = arr.ToList();
-            int n = A[0];
-            A.RemoveAt(0);
-            MaximumDistance distance = new MaximumDistance();
-            int maxDistance = distance.GetMaximumDiff(A);
-            Console.WriteLine("Maximum Distance: "+maxDistance);
+            int n = 3;
+            int[,] A = new int[n,n];
+            for (int i = 0; i < n; i++)
+            {
+                string[] arr_temp = Console.ReadLine().Split(' ');
+                int[] currentIteration = Array.ConvertAll(arr_temp, Int32.Parse);
+                for (int j = 0; j < n; j++)
+                {
+                    A[i, j] = currentIteration[j];
+                }
+            }
+            MaxSumSubarraySquareMatrix maxSum = new MaxSumSubarraySquareMatrix();
+            int maxValue = maxSum.CalculateMaxSum(A, n);
+            Console.WriteLine(maxValue);
             Console.ReadLine();
         }
 
