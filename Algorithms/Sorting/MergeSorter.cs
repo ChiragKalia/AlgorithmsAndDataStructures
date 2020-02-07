@@ -8,10 +8,10 @@ namespace Algorithms.Sorting
 {
     public class MergeSorter
     {
-        public void HalveTheArray(int[] a)
+        public static void MergeSort(int[] a)
         {
             int n = a.Length;
-            if (a.Length / 2 == 1)
+            if (n<2)
             {
                 return;
             }
@@ -26,11 +26,11 @@ namespace Algorithms.Sorting
             {
                 right[j-mid] = a[j];
             }
-            HalveTheArray(left); //Recursive call to further divide the array into two parts
-            HalveTheArray(right); //Recursive call to further divide the array into two parts
+            MergeSort(left); //Recursive call to further divide the array into two parts
+            MergeSort(right); //Recursive call to further divide the array into two parts
             Merge(left, right, a); //Pass the bisected array to merge method
         }
-        public void Merge(int[] L, int[] R,int[] A)
+        public static void Merge(int[] L, int[] R,int[] A)
         {
             int leftLength = L.Length;
             int rightLength = R.Length;

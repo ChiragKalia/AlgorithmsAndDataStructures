@@ -82,21 +82,35 @@ namespace Algorithms.MainProgram
             //MaximumHourglassSum hourGlassSum = new MaximumHourglassSum();
             //int maxSum = hourGlassSum.GetMaximumHourglassSum(arr);
             //Console.WriteLine("Max Sum: " + maxSum);
-            int n = 3;
-            int[,] A = new int[n,n];
-            for (int i = 0; i < n; i++)
+            //Max Sum Subarray of a square matrix
+            //int n = 3;
+            //int[,] A = new int[n,n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string[] arr_temp = Console.ReadLine().Split(' ');
+            //    int[] currentIteration = Array.ConvertAll(arr_temp, Int32.Parse);
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        A[i, j] = currentIteration[j];
+            //    }
+            //}
+            //MaxSumSubarraySquareMatrix maxSum = new MaxSumSubarraySquareMatrix();
+            //int maxValue = maxSum.CalculateMaxSum(A, n);
+            //Console.WriteLine(maxValue);
+
+            //int n = 7;
+            //int[] A = {1,2,3,1,3,6,6};
+            //RepetitiveElementsArray repititiveElements = new RepetitiveElementsArray();
+            //repititiveElements.PrintRepetitiveElementsInArray(A, n);
+            //Console.ReadLine();
+
+            int[] arr = new int[] { 2, 4, 1, 6, 8, 5, 3, 7 };
+            MergeSorter.MergeSort(arr);
+            foreach (int i in arr)
             {
-                string[] arr_temp = Console.ReadLine().Split(' ');
-                int[] currentIteration = Array.ConvertAll(arr_temp, Int32.Parse);
-                for (int j = 0; j < n; j++)
-                {
-                    A[i, j] = currentIteration[j];
-                }
+                Console.Write(i);
             }
-            MaxSumSubarraySquareMatrix maxSum = new MaxSumSubarraySquareMatrix();
-            int maxValue = maxSum.CalculateMaxSum(A, n);
-            Console.WriteLine(maxValue);
-            Console.ReadLine();
+            Console.WriteLine();
         }
 
     }

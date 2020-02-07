@@ -50,6 +50,7 @@
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
+    <Compile Include="Arrays\RepetitiveElementsArray.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\RotateMatrixClockwise.cs" />
     <Compile Include="Arrays\Sort2DArray.cs" />
