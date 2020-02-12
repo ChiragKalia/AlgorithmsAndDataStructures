@@ -51,6 +51,8 @@
     <Compile Include="Sorting\MergeSorter.cs" />
     <Compile Include="Sorting\QuickSorter.cs" />
     <Compile Include="Sorting\SelectionSorter.cs" />
+    <Compile Include="Strings\Anagram.cs" />
+    <Compile Include="Strings\Palindrome.cs" />
     <Compile Include="Warmup\PlusMinus.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

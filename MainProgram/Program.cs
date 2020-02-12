@@ -14,6 +14,7 @@ using DataStructures.Trees;
 using static DataStructures.Trees.BinarySearchTree;
 using Algorithms.Sorting;
 using DataStructures.Helpers;
+using Algorithms.Strings;
 //using DataStructures.LinkedLists;
 
 namespace Algorithms.MainProgram
@@ -104,13 +105,21 @@ namespace Algorithms.MainProgram
             //repititiveElements.PrintRepetitiveElementsInArray(A, n);
             //Console.ReadLine();
 
-            int[] arr = new int[] { 2, 4, 1, 6, 8, 5, 3, 7 };
-            MergeSorter.MergeSort(arr);
-            foreach (int i in arr)
-            {
-                Console.Write(i);
-            }
-            Console.WriteLine();
+            ////Merge Sort
+            //int[] arr = new int[] { 2, 4, 1, 6, 8, 5, 3, 7 };
+            //MergeSorter.MergeSort(arr);
+            //foreach (int i in arr)
+            //{
+            //    Console.Write(i);
+            //}
+
+            ////Check If Anagram
+            //string s1 = "Peeks";
+            //string s2 = "Keep";
+            //Console.WriteLine(Anagram.CheckIfAnagram(s1, s2));
+
+
+            Console.ReadLine();
         }
 
     }
