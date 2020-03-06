@@ -8,3 +8,9 @@ D:\Projects\AlgorithmsAndDataStructures\AbstractProblems\bin\Debug\AbstractProbl
 D:\Projects\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.dll
 D:\Projects\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.pdb
 D:\Projects\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.csprojResolveAssemblyReference.cache
+D:\Projects\Learning\AlgorithmsAndDataStructures\AbstractProblems\bin\Debug\AbstractProblems.dll
+D:\Projects\Learning\AlgorithmsAndDataStructures\AbstractProblems\bin\Debug\AbstractProblems.pdb
+D:\Projects\Learning\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.csprojAssemblyReference.cache
+D:\Projects\Learning\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.csproj.CoreCompileInputs.cache
+D:\Projects\Learning\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.dll
+D:\Projects\Learning\AlgorithmsAndDataStructures\AbstractProblems\obj\Debug\AbstractProblems.pdb

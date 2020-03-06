@@ -37,4 +37,44 @@ namespace AbstractProblems.Fibonacci_Series
             return F[n];
         }
     }
+    public class FibonacciSeries
+    {
+        static int a = 0;
+        static int b = 1;
+        static int[] GetFibonacciSequence(int max)
+        {
+            int[] fibonacciSequence = new int[10];
+            for (int i = 0; i <= max - 1; i++)
+            {
+                if (i == 0)
+                {
+                    fibonacciSequence[i] = a;
+                    fibonacciSequence[++i] = b;
+                }
+                else
+                {
+                    fibonacciSequence[i] = b;
+                }
+                int c = b;
+                b = a + b;
+                a = c;
+            }
+            return fibonacciSequence;
+        }
+        static uint GetNthNumberInFibonacciSequence(int n)
+        {
+            uint a = 0;
+            uint b = 1;
+            uint c = 1;
+
+            for (uint i = 0; i < n; i++)
+            {
+                c = b + a;
+                a = b;
+                b = c;
+            }
+            return c;
+        }
+    }
+
 }

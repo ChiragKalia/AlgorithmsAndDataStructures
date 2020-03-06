@@ -18,5 +18,15 @@ namespace Algorithms.Strings
             }
             return reverse;
         }
+
+        public static string ReverseStringRecursively(string s, string reversed, int index)
+        {
+            if (index < s.Length)
+            {
+                reversed += s[s.Length - ++index];
+                return ReverseStringRecursively(s, reversed, index);
+            }
+            return reversed;
+        }
     }
 }
