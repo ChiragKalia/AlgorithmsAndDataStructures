@@ -45,9 +45,8 @@
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\ReturnNumberOfOnesInBinary.cs" />
     <Compile Include="BitManipulation\SingleNumber.cs" />
-    <Compile Include="GCD.cs" />
+    <Compile Include="Integers\GCDANDLCM.cs" />
     <Compile Include="Integers\CheckIfPrime.cs" />
-    <Compile Include="Integers\GCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Searching\BinarySearching.cs" />
     <Compile Include="Sorting\InsertionSorter.cs" />
@@ -57,6 +56,8 @@
     <Compile Include="Strings\Anagram.cs" />
     <Compile Include="Strings\CountNumberOfWords.cs" />
     <Compile Include="Strings\FindAllSubstrings.cs" />
+    <Compile Include="Strings\FindCommonCharsInTwoStrings.cs" />
+    <Compile Include="Strings\NonRepeatingCharacter.cs" />
     <Compile Include="Strings\Palindrome.cs" />
     <Compile Include="Strings\ReverseString.cs" />
     <Compile Include="Strings\ReverseWordsInAString.cs" />
