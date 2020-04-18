@@ -47,6 +47,8 @@
     <Compile Include="BitManipulation\SingleNumber.cs" />
     <Compile Include="Integers\GCDANDLCM.cs" />
     <Compile Include="Integers\CheckIfPrime.cs" />
+    <Compile Include="Integers\HappyNumber.cs" />
+    <Compile Include="Integers\SingleNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Searching\BinarySearching.cs" />
     <Compile Include="Sorting\InsertionSorter.cs" />

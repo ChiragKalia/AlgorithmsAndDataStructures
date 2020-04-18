@@ -8,7 +8,6 @@ namespace DataStructures.Trees
 {
     public class BinarySearchTree
     {
-        
         public class BSTNode
         {
             public int data;
