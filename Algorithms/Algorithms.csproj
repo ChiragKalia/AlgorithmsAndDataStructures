@@ -44,7 +44,6 @@
     <Compile Include="AlgorithmsCrush\AlgorithmsCrush.cs" />
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\ReturnNumberOfOnesInBinary.cs" />
-    <Compile Include="BitManipulation\SingleNumber.cs" />
     <Compile Include="Integers\GCDANDLCM.cs" />
     <Compile Include="Integers\CheckIfPrime.cs" />
     <Compile Include="Integers\HappyNumber.cs" />
