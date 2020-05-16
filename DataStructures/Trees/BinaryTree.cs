@@ -144,5 +144,36 @@ namespace DataStructures.Trees
 
         }
     #endregion
+    //// Binary Tree Implementation
+    ////Create Binary Tree and Insert Nodes
+    //BinaryTree tree = new BinaryTree();
+    //tree.root = new Node(1);
+    //tree.root.left = new Node(2);
+    //tree.root.right = new Node(3);
+    ////tree.root.left.left = new node(4);
+    ////tree.root.left.right = new node(5);
+    ////tree.root.right.left = new node(6);
+    ////tree.root.right.right = new node(7);
+    //////Level Order Insertion
+    //LevelOrderInsertion(tree.root, 4);
+    //LevelOrderInsertion(tree.root, 5);
+    //LevelOrderInsertion(tree.root, 6);
+    //LevelOrderInsertion(tree.root, 7);
 
+    //////Traverse Breadth First (Level Order)
+    ////LevelOrderTraversal(tree.root);
+    ////Traverse Depth First (Pre Order)
+    ////PreOrder(tree.root);
+    ////Console.WriteLine("------------------------------");
+    //////Traverse Depth First (In Order)
+    ////InOrder(tree.root);
+    ////Console.WriteLine("------------------------------");
+    //////Traverse Depth First (Pre Order)
+    ////PostOrder(tree.root);
+    ////Console.WriteLine(FindHeightOfTree(tree.root));
+    ////FindDepthOfNode(tree.root, 0);
+    ////Console.WriteLine(tree.root.left.depth);
+    ////Count Total Number Of Leaves in Tree
+    //CountLeavesInTree(tree.root);
+    //Console.WriteLine(TotalLeafs);
 }

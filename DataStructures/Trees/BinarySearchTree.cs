@@ -14,6 +14,7 @@ namespace DataStructures.Trees
             public BSTNode left;
             public BSTNode right;
         }
+        private BSTNode nodeParent = new BSTNode();
 
         public BSTNode Insert(BSTNode root, int data) //Insert a node in the binary search tree.
         {
@@ -58,16 +59,15 @@ namespace DataStructures.Trees
                 return Search(root.right, data);
             }
         }
-        private BSTNode nodeParent = new BSTNode();
         public BSTNode Delete(BSTNode root, int data) //Deletes a node in a BST
         {
-            if(root==null)
+            if (root == null)
             {
                 return root;
             }
             if (data < root.data)
             {
-                if(root.left.data == data)
+                if (root.left.data == data)
                 {
                     //Node to be deleted is left of current node
                     nodeParent = root;
@@ -76,7 +76,7 @@ namespace DataStructures.Trees
             }
             else if (data > root.data)
             {
-                if (root.left.data == data)
+                if (root.right.data == data)
                 {
                     //Node to be deleted is right of current node
                     nodeParent = root;
@@ -92,7 +92,7 @@ namespace DataStructures.Trees
                     return root;
                 }
                 //Case 2: One Child
-                else if(root.left == null)
+                else if (root.left == null)
                 {
                     BSTNode temp = root;
                     root = root.right;
@@ -120,9 +120,9 @@ namespace DataStructures.Trees
         }
         public BSTNode FindMin(BSTNode root)// Finds minimum value in the right subtree
         {
-            while (root.right != null)
+            while (root.left != null)
             {
-                root = root.right;
+                root = root.left;
             }
             return root;
         }
