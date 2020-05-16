@@ -128,10 +128,7 @@ namespace DataStructures.Trees
         }
         public BSTNode FindMinValueInRightSubtree(BSTNode root)// Finds minimum value in the right subtree
         {
-            if(root.left ==null)
-            {
-                return null;
-            }
+            if(root.left ==null) return null;
             while (root.left != null)
             {
                 root = root.left;
@@ -150,25 +147,20 @@ namespace DataStructures.Trees
             }
             else if (root.data > data)
             {
-                return Find(root.right, data);
+                return Find(root.left, data);
             }
             else
             {
-                return Find(root.left, data);
+                return Find(root.right, data);
             }
         }
         //In this method I am going to find the nearest inorder ancestor of a given element in a binary search tree 
         BSTNode GetSuccessor(BSTNode root, int data)
         {
             BSTNode current = Find(root, data);
-            if (current == null)
-            {
-                return null;
-            }
-            if(current.right !=null) //Case 1: If node has a right sub tree
-            {
+            if (current == null) return null;
+            if (current.right != null) //Case 1: If node has a right sub tree
                 return FindMinValueInRightSubtree(current.right);
-            }
             else //Case 2: If node has no right sub tree then find deepest ancestor of given node
             {
                 BSTNode successor = null;
@@ -185,7 +177,7 @@ namespace DataStructures.Trees
                         ancestor = ancestor.right;
                     }
                 }
-                    return successor; 
+                return successor;
             }
         }
     }
