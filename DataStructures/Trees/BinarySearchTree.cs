@@ -186,7 +186,7 @@ namespace DataStructures.Trees
             if (current == null) return null; //Does not exist.
             BSTNode temp = current.left;
             if (temp != null) //For Case 1 where node has a left sub tree.
-            {
+            { // We're going to walk the tree from root and find the parent of the current node since that will be it's parent.
                 while (temp.right != null)
                 {
                     temp = temp.right;
@@ -210,5 +210,35 @@ namespace DataStructures.Trees
             return temp;
         }
     }
+    //BINARY SEARCH TREE IMPLEMENTATION
+
+    //BSTNode root = null;
+    //root = Insert(root, 15);
+    //root = Insert(root, 10);
+    //root = Insert(root, 8);
+    //root = Insert(root, 12);
+    //root = Insert(root, 6);
+    //root = Insert(root, 11);
+    //root = Insert(root, 20);
+    //root = Insert(root, 17);
+    //root = Insert(root, 25);
+    //root = Insert(root, 16);
+    //root = Insert(root, 27);
+
+    //Console.WriteLine("Enter Number To Be Searched: ");
+    //int numberToBeSearched = Convert.ToInt32(Console.Read());
+    //if(Search(root, numberToBeSearched) == true)
+    //    Console.WriteLine("Found");
+    //else
+    //    Console.WriteLine("Not Found");
+
+    //Delete(root, 15);
+
+    //BSTNode successor = GetSuccessor(root, 12);
+    //Console.WriteLine("The Successor of 12 is: "+ successor.data);
+
+    //BSTNode predecessor = GetPredecessor(root, 25);
+    //Console.WriteLine("The Predecessor is: " + predecessor.data);
+
 
 }

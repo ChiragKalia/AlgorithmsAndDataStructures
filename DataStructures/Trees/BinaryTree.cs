@@ -114,7 +114,7 @@ namespace DataStructures.Trees
             #endregion
             public static int FindHeightOfTree(Node root)
             {
-                if (root == null) return -1;
+                if (root == null) return 0;
                 int leftsubtreeheight = FindHeightOfTree(root.left);
                 int rightsubtreeheight = FindHeightOfTree(root.right);
                 return Math.Max(leftsubtreeheight, rightsubtreeheight) + 1;
@@ -125,7 +125,7 @@ namespace DataStructures.Trees
                 {
                     node.depth = depth;
                     FindDepthOfNode(node.left, depth + 1); //Left Sub Tree
-                    FindDepthOfNode(node.right, depth + 1); //Left Sub Tree
+                    FindDepthOfNode(node.right, depth + 1); //Right Sub Tree
                 }
             }
             public static void CountLeavesInTree(Node node)
@@ -142,7 +142,30 @@ namespace DataStructures.Trees
                 }
             }
 
-        }
+            public static int FindDiameterOfBT(Node root)
+            {
+                if (root == null) return 0;
+                int lHeight = FindHeightOfTree(root.left);
+                int rHeight = FindHeightOfTree(root.right);
+                int lDiameter = FindDiameterOfBT(root.left);
+                int rDiameter = FindDiameterOfBT(root.right);
+                return Math.Max(lHeight + rHeight + 1, Math.Max(lDiameter, rDiameter));
+            }
+            public static bool IsBTreeBalanced(Node root) //Program to check if the tree is Balanced
+            {
+                if (BalancedHeight(root) > -1) return true;
+                return false;
+            }
+            private static int BalancedHeight(Node root)
+            { //Helper method
+                if (root == null) return 0;
+                int lHeight = BalancedHeight(root.left);
+                int rHeight = BalancedHeight(root.right);
+                if (lHeight == -1 || rHeight == -1) return -1;
+                if (Math.Abs(lHeight - rHeight) > 1) return -1;
+                return Math.Max(lHeight, rHeight) + 1;
+            }
+    }
     #endregion
     //// Binary Tree Implementation
     ////Create Binary Tree and Insert Nodes
