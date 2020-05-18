@@ -180,6 +180,35 @@ namespace DataStructures.Trees
                 return successor;
             }
         }
+        public BSTNode GetPredecessor(BSTNode root, int data)
+        {
+            BSTNode current = Find(root, data);
+            if (current == null) return null; //Does not exist.
+            BSTNode temp = current.left;
+            if (temp != null) //For Case 1 where node has a left sub tree.
+            {
+                while (temp.right != null)
+                {
+                    temp = temp.right;
+                }
+            }
+            else // For Case 2 where node has a right sub tree.
+            {
+                BSTNode predecessor = root;
+                temp = root;
+                while (current.data != temp.data)
+                {
+                    if (current.data > temp.data)
+                    {
+                        predecessor = temp;
+                        temp = temp.right;
+                    }
+                    else temp = temp.left;
+                }
+                temp = predecessor;
+            }
+            return temp;
+        }
     }
 
 }
