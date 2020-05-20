@@ -165,6 +165,42 @@ namespace DataStructures.Trees
                 if (Math.Abs(lHeight - rHeight) > 1) return -1;
                 return Math.Max(lHeight, rHeight) + 1;
             }
+        public static List<List<int>> ZigzagOrderTraversal(Node root)  //Revisit
+        { //Breadth First ZigZag Traversal of Binary Tree 
+            List<List<int>> lists = new List<List<int>>();
+            Stack<Node> stack = new Stack<Node>();
+            if (root != null) stack.Push(root);
+            bool forward = true;
+
+            while (stack.Count > 0)
+            {
+                lists.Add(new List<int>());
+                Stack<Node> nextStack = new Stack<Node>();
+
+                while (stack.Count > 0)
+                {
+                    Node n = stack.Pop();
+                    lists[lists.Count - 1].Add(n.key);
+
+                    if (forward)
+                    {
+                        if (n.left != null) nextStack.Push(n.left);
+                        if (n.right != null) nextStack.Push(n.right);
+                    }
+                    else
+                    {
+                        if (n.right != null) nextStack.Push(n.right);
+                        if (n.left != null) nextStack.Push(n.left);
+                    }
+                }
+
+                forward = !forward;
+                stack = nextStack;
+            }
+
+            return lists;
+        }
+
     }
     #endregion
     //// Binary Tree Implementation
@@ -199,4 +235,6 @@ namespace DataStructures.Trees
     ////Count Total Number Of Leaves in Tree
     //CountLeavesInTree(tree.root);
     //Console.WriteLine(TotalLeafs);
+    //Console.WriteLine(FindDiameterOfBT(tree.root));
+    //Console.WriteLine(IsBTreeBalanced(tree.root));
 }
