@@ -9,12 +9,12 @@ namespace DataStructures.Trees
     #region BinaryTree
         public class Node
         {
-            public int key;
+            public int val;
             public Node left, right;
             public int depth;
             public Node(int item)
             {
-                key = item;
+                val = item;
                 left = right = null;
                 depth = 0;
             }
@@ -41,9 +41,26 @@ namespace DataStructures.Trees
                 {
                     if (temp == null)
                         return;
-                    Console.WriteLine("Pre Order Traversal " + temp.key + " ");
+                    Console.WriteLine("Pre Order Traversal " + temp.val + " ");
                     PreOrder(temp.left);
                     PreOrder(temp.right);
+                }
+                /* Iterative PreOrder traversal of a binary tree*/
+                public static List<int> IterativePreOrder(Node root)
+                {
+                    List<int> list = new List<int>();
+                    if (root == null)
+                        return list;
+                    Stack<Node> stack = new Stack<Node>();
+                    stack.Push(root);
+                    while (stack.Any())
+                    {
+                        Node temp = stack.Pop();
+                        list.Add(temp.val);
+                        if (temp.right != null) stack.Push(temp.right);
+                        if (temp.left != null) stack.Push(temp.left);
+                    }
+                    return list;
                 }
                 /* Inorder traversal of a binary tree*/
                 public static void InOrder(Node temp)
@@ -51,8 +68,39 @@ namespace DataStructures.Trees
                     if (temp == null)
                         return;
                     InOrder(temp.left);
-                    Console.WriteLine("In Order Traversal " + temp.key + " ");
+                    Console.WriteLine("In Order Traversal " + temp.val + " ");
                     InOrder(temp.right);
+                }
+                /* Iterative InOrder traversal of a binary tree*/
+                public static List<int> IterativeInOrder(Node root)
+                { // Revisit
+                    var res = new List<int>();
+
+                    if (root == null)
+                        return res;
+
+                    var temp = root;
+                    var st = new Stack<Node>();
+
+                    while (temp != null || st.Count > 0)
+                    {
+                        if (temp != null)
+                        {
+                            st.Push(temp);
+                            temp = temp.left;
+                        }
+
+                        if (temp == null && st.Count > 0)
+                        {
+                            var current = st.Pop();
+                            Console.WriteLine(current.val);
+                            res.Add(current.val);
+
+                            temp = current.right;
+                        }
+                    }
+
+                    return res;
                 }
                 /* Postorder traversal of a binary tree*/
                 public static void PostOrder(Node temp)
@@ -61,11 +109,53 @@ namespace DataStructures.Trees
                         return;
                     PostOrder(temp.left);
                     PostOrder(temp.right);
-                    Console.WriteLine("Post Order Traversal " + temp.key + " ");
+                    Console.WriteLine("Post Order Traversal " + temp.val + " ");
                 }
-            #endregion
-            #region Breadth First Insertion & Traversal
-                public static void LevelOrderInsertion(Node temp, int key)
+                /* Iterative PostOrder traversal of a binary tree*/
+                public static List<int> IterativePostOrder(Node root)
+                {
+                    var res = new List<int>();
+                    if (root == null) return res;
+                    var st = new Stack<Node>();
+                    st.Push(root);
+                    Node prev = null;
+                    while (st.Count > 0)
+                    {
+                        Node current = st.Peek();
+                        if (prev == null || prev.left != current || prev.right != current)
+                        {
+                            if (current.left != null) st.Push(current.left);
+                            if (current.right != null) st.Push(current.right);
+                            else
+                            {
+                                st.Pop();
+                                res.Add(current.val);
+                            }
+                        }
+                        else if (current.left == prev)
+                        {
+                            if (current.right != null)
+                                st.Push(current.right);
+                            else
+                            {
+                                st.Pop();
+                                res.Add(current.val);
+                            }
+                        }
+                        else if (current.right == prev)
+                        {
+                            st.Pop();
+                            res.Add(current.val);
+                        }
+
+                        prev = current;
+
+                    }
+                    return res;
+                }
+        #endregion
+        #region Breadth First Insertion & Traversal
+        public static void LevelOrderInsertion(Node temp, int key)
                 {
                     Queue<Node> q = new Queue<Node>();
                     q.Enqueue(temp);
@@ -99,7 +189,7 @@ namespace DataStructures.Trees
                     while (q.Count != 0)
                     {
                         Node visited = q.Peek();
-                        Console.WriteLine("The value of Node is: " + visited.key);
+                        Console.WriteLine("The value of Node is: " + visited.val);
                         q.Dequeue();
                         if (visited.left != null)
                         {
@@ -165,43 +255,53 @@ namespace DataStructures.Trees
                 if (Math.Abs(lHeight - rHeight) > 1) return -1;
                 return Math.Max(lHeight, rHeight) + 1;
             }
-        public static List<List<int>> ZigzagOrderTraversal(Node root)  //Revisit
-        { //Breadth First ZigZag Traversal of Binary Tree 
-            List<List<int>> lists = new List<List<int>>();
-            Stack<Node> stack = new Stack<Node>();
-            if (root != null) stack.Push(root);
-            bool forward = true;
-
-            while (stack.Count > 0)
-            {
-                lists.Add(new List<int>());
-                Stack<Node> nextStack = new Stack<Node>();
+            public static List<List<int>> ZigzagOrderTraversal(Node root)  //Revisit
+            { //Breadth First ZigZag Traversal of Binary Tree 
+                List<List<int>> lists = new List<List<int>>();
+                Stack<Node> stack = new Stack<Node>();
+                if (root != null) stack.Push(root);
+                bool forward = true;
 
                 while (stack.Count > 0)
                 {
-                    Node n = stack.Pop();
-                    lists[lists.Count - 1].Add(n.key);
+                    lists.Add(new List<int>());
+                    Stack<Node> nextStack = new Stack<Node>();
 
-                    if (forward)
+                    while (stack.Count > 0)
                     {
-                        if (n.left != null) nextStack.Push(n.left);
-                        if (n.right != null) nextStack.Push(n.right);
+                        Node n = stack.Pop();
+                        lists[lists.Count - 1].Add(n.val);
+
+                        if (forward)
+                        {
+                            if (n.left != null) nextStack.Push(n.left);
+                            if (n.right != null) nextStack.Push(n.right);
+                        }
+                        else
+                        {
+                            if (n.right != null) nextStack.Push(n.right);
+                            if (n.left != null) nextStack.Push(n.left);
+                        }
                     }
-                    else
-                    {
-                        if (n.right != null) nextStack.Push(n.right);
-                        if (n.left != null) nextStack.Push(n.left);
-                    }
+
+                    forward = !forward;
+                    stack = nextStack;
                 }
 
-                forward = !forward;
-                stack = nextStack;
+                return lists;
             }
+            public static bool CheckIfIdentical(Node tree1, Node tree2)
+            { //Checks if two trees are identical in structure as well as values.
+                if (tree1 == null && tree2 == null) return true;
 
-            return lists;
+                /* 2. both non-empty -> compare them */
+                if (tree1 != null && tree2 != null)
+                {
+                    return (tree1.val == tree2.val && CheckIfIdentical(tree1.left, tree2.left) && CheckIfIdentical(tree1.right, tree2.right));
+                }
+                return false;
+            }
         }
-
-    }
     #endregion
     //// Binary Tree Implementation
     ////Create Binary Tree and Insert Nodes
