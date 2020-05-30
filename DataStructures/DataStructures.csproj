@@ -50,6 +50,7 @@
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
+    <Compile Include="Arrays\MergeOverlappingIntervals.cs" />
     <Compile Include="Arrays\MergeTwoSortedArrays.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\RepetitiveElementsArray.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Stack\StackImplementation.cs" />
     <Compile Include="Trees\BinaryTree.cs" />
     <Compile Include="Trees\BinarySearchTree.cs" />
+    <Compile Include="Arrays\MoveZeroesToEndOfArray.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
