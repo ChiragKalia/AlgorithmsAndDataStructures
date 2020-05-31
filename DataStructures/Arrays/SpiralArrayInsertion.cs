@@ -11,161 +11,52 @@ namespace DataStructures.Arrays
     {
         // This program inserts values in a n*n array spherically. e.g if n = 3
         //Output - [1 2 3]
-        //          [8 9 4]
-        //           [7 6 5]
-        public void InsertValuesSpirally(ref int[,] A, int n)
+        //         [8 9 4]
+        //         [7 6 5]
+        //Problem Statement - https://leetcode.com/problems/spiral-matrix-ii
+        //Solution - https://www.youtube.com/watch?v=NO1zLdOwgR0
+        public static int[][] GenerateSpiralMatrix(int n)
         {
-            int rowsProcessed = 0;
-            int columnsProcessed = 0;
-            int nrt = n / 2;
-            if (n % 2 == 1)
+            int[][] matrix = new int[n][]; //As per the leetcode problem I've used Jagged Array otherwise it's better if we have 2d array as we won't have to instanciate it.
+            for (int i = 0; i < n; i++)
             {
-                nrt++;
+                matrix[i] = new int[n];
             }
-            int nOrig = n;
-            int LSI = 0, LEI = n;
-            int TSI = 0, TEI = n;
-            int count = 1;
-            while (rowsProcessed < nrt)
+            int rowBegin = 0, rowEnd = n - 1;
+            int columnBegin = 0, columnEnd = n - 1;
+            int counter = 1;
+            while (rowBegin <= rowEnd && columnBegin <= columnEnd)
             {
-                for (int i = TSI; i < TEI; i++)
+                for (int i = columnBegin; i <= columnEnd; i++)
                 {
-                    if (i == TSI)
-                    {
-                        for (int j = LSI; j < LEI; j++) // Will implement row by row from left to rights* * * * * * * *
-                        {
-                            A[i, j] = count++;
-                        }
-                    }
-                    if ((TEI - TSI) > 1)
-                    {
+                    matrix[rowBegin][i] = counter++;
+                }
+                rowBegin++;
 
-                        if (i == TSI)
-                        {
-                            i++;
-                        }
-                        TSI++;
-                        //TEI--;
-                        LSI = n - 1;
-                        for (int j = LSI; j < LEI; j++) // Will implement up down from right side
-                        {
-                            A[i, j] = count++;
-                        }
-                    }
-                    if (i == TEI - 1)
-                    {
-                        LSI = n - 2;
-                        LEI = columnsProcessed;
-                        for (int j = LSI; j >= columnsProcessed; j--) // Will implement row by row from right to left
-                        {
-                            A[i, j] = count++;
-                        }
-                        rowsProcessed++;
-                    }
-                }
-                TSI = 0 + rowsProcessed;
-                TEI = nOrig - rowsProcessed;
-                //if(TEI-TSI == 1)
-                //{
-                //    TEI++;
-                //}
-                LSI = columnsProcessed;
-                LEI = LSI + 1;
-                for (int i = TEI - 1; i >= TSI; i--)
+                for (int i = rowBegin; i <= rowEnd; i++)
                 {
-                    for (int j = LSI; j < LEI; j++)
-                    {
-                        A[i, j] = count++;
-                    }
+                    matrix[i][columnEnd] = counter++;
                 }
-                columnsProcessed++;
-                n--;
-                LSI = columnsProcessed;
-                LEI = n;
-            }
-        }
-        public List<List<int>> GenerateMatrix(int A)
-        {
-            List<List<int>> mList = new List<List<int>>();
-            int[,] arr = new int[A, A];
-            int rowsProcessed = 0;
-            int columnsProcessed = 0;
-            int nrt = A / 2;
-            if (A % 2 == 1)
-            {
-                nrt++;
-            }
-            int nOrig = A;
-            int LSI = 0, LEI = A;
-            int TSI = 0, TEI = A;
-            int count = 1;
-            while (rowsProcessed < nrt)
-            {
-                for (int i = TSI; i < TEI; i++)
-                {
-                    if (i == TSI)
-                    {
-                        for (int j = LSI; j < LEI; j++) // Will implement row by row from left to rights* * * * * * * *
-                        {
-                            arr[i, j] = count++;
-                        }
-                    }
-                    if ((TEI - TSI) > 1)
-                    {
+                columnEnd--;
 
-                        if (i == TSI)
-                        {
-                            i++;
-                        }
-                        TSI++;
-                        //TEI--;
-                        LSI = A - 1;
-                        for (int j = LSI; j < LEI; j++) // Will implement up down from right side
-                        {
-                            arr[i, j] = count++;
-                        }
-                    }
-                    if (i == TEI - 1)
-                    {
-                        LSI = A - 2;
-                        LEI = columnsProcessed;
-                        for (int j = LSI; j >= columnsProcessed; j--) // Will implement row by row from right to left
-                        {
-                            arr[i, j] = count++;
-                        }
-                        rowsProcessed++;
-                    }
-                }
-                TSI = 0 + rowsProcessed;
-                TEI = nOrig - rowsProcessed;
-                //if(TEI-TSI == 1)
-                //{
-                //    TEI++;
-                //}
-                LSI = columnsProcessed;
-                LEI = LSI + 1;
-                for (int i = TEI - 1; i >= TSI; i--)
+                if (rowBegin <= rowEnd)
                 {
-                    for (int j = LSI; j < LEI; j++)
+                    for (int i = columnEnd; i >= columnBegin; i--)
                     {
-                        arr[i, j] = count++;
+                        matrix[rowEnd][i] = counter++;
                     }
+                    rowEnd--;
                 }
-                columnsProcessed++;
-                A--;
-                LSI = columnsProcessed;
-                LEI = A;
-            }
-            for (int i = 0; i < nOrig; i++)
-            {
-                List<int> subList = new List<int>(nOrig);
-                for (int j = 0; j < nOrig; j++)
+                if (columnEnd >= columnBegin)
                 {
-                    subList.Add(arr[i, j]);
+                    for (int i = rowEnd; i >= rowBegin; i--)
+                    {
+                        matrix[i][columnBegin] = counter++;
+                    }
+                    columnBegin++;
                 }
-                mList.Add(subList);
             }
-            return mList;
+            return matrix;
         }
     }
 }
