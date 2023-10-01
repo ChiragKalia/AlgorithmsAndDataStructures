@@ -61,6 +61,7 @@
     <Compile Include="Strings\FindCommonCharsInTwoStrings.cs" />
     <Compile Include="Strings\NonRepeatingCharacter.cs" />
     <Compile Include="Strings\Palindrome.cs" />
+    <Compile Include="Strings\RemoveAllOccurencesOfDuplicateString.cs" />
     <Compile Include="Strings\ReverseString.cs" />
     <Compile Include="Strings\ReverseWordsInAString.cs" />
     <Compile Include="Warmup\PlusMinus.cs" />
