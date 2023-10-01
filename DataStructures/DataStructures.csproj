@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataStructures</RootNamespace>
     <AssemblyName>DataStructures</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -46,7 +46,6 @@
     <Compile Include="Arrays\BinaryArraySort.cs" />
     <Compile Include="Arrays\CommonElements.cs" />
     <Compile Include="Arrays\FindMissingNumber.cs" />
-    <Compile Include="Arrays\MaxDistance.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
@@ -67,11 +66,13 @@
     <Compile Include="Helpers\SwapVars.cs" />
     <Compile Include="LinkedLists\LinkedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queue\Queue.cs" />
-    <Compile Include="Stack\StackImplementation.cs" />
     <Compile Include="Trees\BinaryTree.cs" />
     <Compile Include="Trees\BinarySearchTree.cs" />
     <Compile Include="Arrays\MoveZeroesToEndOfArray.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Queue\" />
+    <Folder Include="Stack\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
