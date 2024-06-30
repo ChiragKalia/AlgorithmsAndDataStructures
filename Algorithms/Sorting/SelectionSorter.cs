@@ -8,27 +8,26 @@ namespace Algorithms.Sorting
 {
     public class SelectionSorter
     {
-        public int[] performSelectionSort(int[] A, int n)
+        public int[] performSelectionSort(int[] arr)
         {
-            int start = 0;
-            for(int i= start; i<n; i++)
+            int sortIndex = 0;
+            while (sortIndex <= arr.Length - 1)
             {
-                int maxValue = Int32.MaxValue;
-                int swapIndex = 0;
-                for(int j=start; j<n; j++)
+                int minIndex = sortIndex;
+                for (int i = sortIndex + 1; i < arr.Length; i++)
                 {
-                    if(A[j]< maxValue)
+                    if (arr[i] < arr[minIndex])
                     {
-                        maxValue = A[j];
-                        swapIndex = j;
+                        minIndex = i;
                     }
                 }
-                int tempVal = A[start];
-                A[start] = maxValue;  //e.g 10+5=15; 
-                A[swapIndex] = tempVal;
-                start += 1;
+                //swap
+                int temp = arr[sortIndex];
+                arr[sortIndex] = arr[minIndex];
+                arr[minIndex] = temp;
+                sortIndex++;
             }
-            return A;
+            return arr;
         }
     }
 }

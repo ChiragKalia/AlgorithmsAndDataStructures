@@ -24,16 +24,10 @@ namespace Algorithms.MainProgram
     {
         static void Main(string[] args)
         {
-            Program program = new Program();
-            Console.WriteLine(program.isPower);
-            Console.ReadLine();
+
         }
-        public int isPower(int A)
-        {
-            if(Math.Sqrt(A) )
-            return 0;
-        }
+
     }
 
 }
-}
+

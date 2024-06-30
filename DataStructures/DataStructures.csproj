@@ -51,6 +51,7 @@
     <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
     <Compile Include="Arrays\MergeOverlappingIntervals.cs" />
     <Compile Include="Arrays\MergeTwoSortedArrays.cs" />
+    <Compile Include="Arrays\PascalTriangle.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\RepetitiveElementsArray.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
