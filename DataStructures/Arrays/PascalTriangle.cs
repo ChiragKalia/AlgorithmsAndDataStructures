@@ -32,7 +32,7 @@ namespace DataStructures.Arrays
             return element;
         }
         public static void PrintRow(int row) //O(row*col) complexity near about n*n) which is bad
-        { 
+        {
             for (int i = 0; i < row; i++)
             {
                 Console.Write(PrintElement(row - 1, i) + " ");
@@ -64,3 +64,4 @@ namespace DataStructures.Arrays
 
         }
     }
+}
