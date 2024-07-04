@@ -8,40 +8,23 @@ namespace DataStructures.Arrays
 {
     public class MaxSumContiguousSubarray
     {
-        public int GetMaximumSum(int[] A, int n) //A is array and n is the number of elements in the array
+        /*  Problem Statement: Given an integer array arr, find the contiguous subarray (containing at least one number) which
+            has the largest sum and returns its sum and prints the subarray.
+         */
+        //https://takeuforward.org/data-structure/kadanes-algorithm-maximum-subarray-sum-in-an-array/
+        //https://www.youtube.com/watch?v=AHZpyENo7k4
+        public static int MaxSubArrayUsingKadane(int[] arr)
         {
-            int maxSum = 0;
-            int currentSum = 0;
-            //bool areAllNegativeNumbers = true;
-            //int biggestNegativeNumber = Int32.MinValue; //This case also handles an array with all negative numbers. So it returns biggest negative number;
-            for(int i=0; i<n; i++) // This is done using Kadane's algorithm which reduces the complexity to linear time. What an algo (y).
+
+            int max = Int32.MinValue;
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
             {
-                //if(A[i]>0) 
-                //{
-                //    areAllNegativeNumbers = false;
-                //}
-                //else if (A[i] > biggestNegativeNumber)
-                //{
-                //    biggestNegativeNumber = A[i];
-                //}
-                currentSum = currentSum + A[i];
-                if(currentSum < 0)
-                {
-                    currentSum = 0;
-                }
-                if(maxSum<currentSum)
-                {
-                    maxSum = currentSum;
-                }
+                sum += arr[i];
+                max = (sum > max) ? sum : max;
+                if (sum < 0) sum = 0;
             }
-            //if(areAllNegativeNumbers == true)
-            //{
-            //    return biggestNegativeNumber; //Returns biggest negative number from the list;
-            //}
-            //else
-            //{
-                return maxSum;  //Returns sum of maximum contiguous subarray
-            //}
+            return max;
         }
     }
 }
