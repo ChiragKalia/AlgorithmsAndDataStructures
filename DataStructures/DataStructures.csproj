@@ -59,6 +59,7 @@
     <Compile Include="Arrays\RotateArray.cs" />
     <Compile Include="Arrays\RotateMatrixClockwise.cs" />
     <Compile Include="Arrays\SetMatrixZeroes.cs" />
+    <Compile Include="Arrays\Sort012NumbersArray.cs" />
     <Compile Include="Arrays\Sort2DArray.cs" />
     <Compile Include="Arrays\SortedArray.cs" />
     <Compile Include="Arrays\SparseArray.cs" />
