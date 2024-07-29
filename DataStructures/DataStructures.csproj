@@ -57,7 +57,7 @@
     <Compile Include="Arrays\RepetitiveElementsArray.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\RotateArray.cs" />
-    <Compile Include="Arrays\RotateMatrixClockwise.cs" />
+    <Compile Include="Arrays\RotateMatrix.cs" />
     <Compile Include="Arrays\SetMatrixZeroes.cs" />
     <Compile Include="Arrays\Sort012NumbersArray.cs" />
     <Compile Include="Arrays\Sort2DArray.cs" />
