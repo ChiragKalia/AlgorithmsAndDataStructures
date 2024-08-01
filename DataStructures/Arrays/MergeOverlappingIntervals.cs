@@ -8,78 +8,31 @@ namespace DataStructures.Arrays
 {
     public class MergeOverlappingIntervals
     {
-        public static int[][] Merge(int[][] intervals)
+        /*
+         * Problem Statement: Given an array of intervals, merge all the overlapping intervals and return an array of non-overlapping intervals.
+         * https://leetcode.com/problems/merge-intervals/
+         * https://www.youtube.com/watch?v=IexN60k62jo
+         */
+        public int[][] Merge(int[][] intervals)
         {
-            List<int[]> result = new List<int[]>();
-            intervals = intervals.OrderBy(i => i[0]).ToArray();
-            int j = 0; //ToTraverse result Array;
-            for (int i = 0; i < intervals.Length; i++)
+            //First we sort the array then we perform the merging.
+            Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));
+
+            List<int[]> ans = new List<int[]>();
+            ans.Add(intervals[0]);
+            for (int i = 1; i < intervals.Length; i++)
             {
-                if (result.Count == 0)
+
+                if (intervals[i][0] > ans[ans.Count - 1][1])
                 {
-                    if (i < intervals.Length - 1 && intervals[i][1] >= intervals[i + 1][0])
-                    {
-                        if (intervals[i][0] == 0 && intervals[i][1] == 0 && intervals[i + 1][0] != 0 && intervals[i + 1][1] != 0)
-                        {
-                            //write both to result
-                            result.Add(intervals[i]);
-                            result.Add(intervals[i + 1]);
-                        }
-                        else if (intervals[i + 1][0] == 0 && intervals[i + 1][1] == 0 && intervals[i][0] != 0 && intervals[i][1] != 0)
-                        {
-                            //write both to result
-                            result.Add(intervals[i + 1]);
-                            result.Add(intervals[i]);
-                        }
-                        else if (intervals[i][0] == 0 && intervals[i][1] == 0 && intervals[i + 1][0] == 0 && intervals[i + 1][1] == 0)
-                        {
-                            result.Add(intervals[i]);
-                        }
-                        else
-                        {
-                            int smallerFirst = (intervals[i][0] > intervals[i + 1][0]) ? intervals[i + 1][0] : intervals[i][0];
-                            int biggerSecond = (intervals[i][1] > intervals[i + 1][1]) ? intervals[i][1] : intervals[i + 1][1];
-                            result.Add(new int[] { smallerFirst, biggerSecond });
-                        }
-                        i++;
-                    }
-                    else
-                    {
-                        result.Add(intervals[i]);
-                    }
+                    ans.Add(intervals[i]);
                 }
-                else
+                else if (intervals[i][0] <= ans[ans.Count - 1][1])
                 {
-                    if (result[j] != null)
-                    {
-                        if (result[j][1] >= intervals[i][0])
-                        {
-                            if (intervals[i][0] == 0 && intervals[i][1] == 0 && result[j][0] != 0)
-                            {
-                                var temp = result[j];
-                                result.RemoveAt(j);
-                                result.Add(intervals[i]);
-                                result.Add(temp);
-                            }
-                            else
-                            {
-                                int smallerFirst = (result[j][0] > intervals[i][0]) ? intervals[i][0] : result[j][0];
-                                int biggerSecond = (result[j][1] > intervals[i][1]) ? result[j][1] : intervals[i][1];
-                                result[j] = new int[] { smallerFirst, biggerSecond };
-                            }
-                        }
-                        else
-                        {
-                            result.Add(intervals[i]); j++;
-                        }
-                    }
-                    else
-                    {
-                        result[j] = intervals[i];
-                    }
+                    ans[ans.Count - 1][1] = Math.Max(ans[ans.Count - 1][1], intervals[i][1]);
                 }
             }
-            return result.ToArray();
+            return ans.ToArray();
         }
     }
 }
