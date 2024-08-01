@@ -8,7 +8,7 @@ namespace Algorithms
 {
     public class AlgorithmsCrush
     {
-        public int GetHighestValueFromArray(int N, int M, int[,] A)
+        public static int GetHighestValueFromArray(int N, int M, int[,] A)
         {
             int[] result = new int[N];
             for (int i = 0; i < M; i++)

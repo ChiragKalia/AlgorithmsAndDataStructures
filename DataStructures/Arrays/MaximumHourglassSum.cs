@@ -22,7 +22,7 @@ namespace DataStructures.Arrays
         //                              2 4 4
         //                                2
         //                              1 2 4
-        public int GetMaximumHourglassSum(int[][] A)
+        public static int GetMaximumHourglassSum(int[][] A)
         {
             int n = A.Length;
             int maxSum = A[0][0];

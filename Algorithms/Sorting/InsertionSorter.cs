@@ -8,7 +8,7 @@ namespace Algorithms.Sorting
 {
     public class InsertionSorter
     {
-        public int[] performInsertionSort(int[] A, int n) //This function will sort an array using insertion sort.s
+        public static int[] performInsertionSort(int[] A, int n) //This function will sort an array using insertion sort.s
         {
             int sortedIndex = 0;
             for(int i=1; i<n; i++)

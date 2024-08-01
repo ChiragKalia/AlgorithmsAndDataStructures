@@ -9,7 +9,7 @@ namespace DataStructures.Arrays
     public class PoisonousPlants
     {
         static int count = 0;
-        public int countNumberOfDays(int length, List<int> A)
+        public static int countNumberOfDays(int length, List<int> A)
         {
             var expectedList = A.OrderByDescending(x => x);
             var equalLists = A.SequenceEqual(expectedList);

@@ -37,7 +37,7 @@ namespace Algorithms.BitManipulation
         B: is an integer within the range [0..2,000,000,000] and A <= B
         K: is an integer within the range [1..2,000,000,000]
         Time complexity must be O(1). */
-        public int ReturnDivisibleByK(int A, int B, int K)
+        public static int ReturnDivisibleByK(int A, int B, int K)
         {
             return ((B - A) / K + 1);
         }

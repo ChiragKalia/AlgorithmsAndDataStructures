@@ -8,26 +8,31 @@ namespace DataStructures.Arrays
 {
     public class MergeTwoSortedArrays
     {
-        public static int[] MergeTwoSortedArraysIntoOne(int[] arr1, int[] arr2, int len1, int len2)
+        /*
+         * Problem statement: Given two sorted arrays nums1[] and nums2[] of sizes m and n in non-decreasing order. Merge them in sorted order. Modify nums1 so that it contains the first M elements and modify nums2 so that it contains the last N elements.
+         * https://takeuforward.org/data-structure/merge-two-sorted-arrays-without-extra-space/
+         * https://www.youtube.com/watch?v=n7uwj04E0I4
+         */
+        public static void Merge(int[] nums1, int m, int[] nums2, int n)
         {
-            int[] resultArr = new int[len1 + len2]; //1,1,2,3,4,5
-            int i = 0, j = 0, k = 0;
-            while (i < len1 && j < len2)
+            int left = nums1.Length - 1;
+            int right = 0;
+            while (left >= 0 && right < nums2.Length)
             {
-                if (arr1[i] < arr2[j])
-                    resultArr[k++] = arr1[i++];
+                if (nums1[left] > nums2[right])
+                {
+                    //Swap both numbers
+                    (nums1[left], nums2[right]) = (nums2[right], nums1[left]);
+                    left--; right++;
+                }
                 else
-                    resultArr[k++] = arr2[j++];
+                {
+                    break;
+                }
             }
-            while (i < len1)
-                resultArr[k++] = arr1[i++];
-
-            // Store remaining elements 
-            // of second array 
-            while (j < len2)
-                resultArr[k++] = arr2[j++];
-
-            return resultArr;
+            //Sort them in the end.
+            Array.Sort(nums1);
+            Array.Sort(nums2);
         }
     }
 }

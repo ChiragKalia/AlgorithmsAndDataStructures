@@ -10,7 +10,7 @@ namespace DataStructures.Trees
     {
         public class BSTNode
         {
-            public int data;
+            public static int data;
             public BSTNode left;
             public BSTNode right;
         }

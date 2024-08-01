@@ -8,7 +8,7 @@ namespace Algorithms.Integers
 {
     public class SingleNumber
     {
-        public int FindSingleNumber(int[] nums)
+        public static int FindSingleNumber(int[] nums)
         {
             int uniqueNumber = 0;
             foreach (int i in nums)

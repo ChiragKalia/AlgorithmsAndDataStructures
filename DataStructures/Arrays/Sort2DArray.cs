@@ -15,7 +15,7 @@ namespace DataStructures.Arrays
         //<param name="A">Array to be Sorted</param>
         //I have to make it type agnostic //Maybe Later
         //It's not an ideal program currently, Having a time complexity of O(N3(cube)). But I'll tweak it later.
-        public int[,] sort2DArray(ref int[,] A, int length)
+        public static int[,] sort2DArray(ref int[,] A, int length)
         {
             for (int i = 0; i < length; i++)
             {

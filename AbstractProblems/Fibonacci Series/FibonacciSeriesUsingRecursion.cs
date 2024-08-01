@@ -23,7 +23,7 @@ namespace AbstractProblems.Fibonacci_Series
         // A function that returns sum of fibonacci series using recursion with memorization technique. 
         //</summary>
         //<param name="n">Number of elements in that series</param>
-        public int Fib(int n)
+        public static int Fib(int n)
         {
             if (n <= 1)
             {

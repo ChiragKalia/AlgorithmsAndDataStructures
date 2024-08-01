@@ -8,7 +8,7 @@ namespace Algorithms.Sorting
 {
     public class SelectionSorter
     {
-        public int[] performSelectionSort(int[] arr)
+        public static int[] performSelectionSort(int[] arr)
         {
             int sortIndex = 0;
             while (sortIndex <= arr.Length - 1)

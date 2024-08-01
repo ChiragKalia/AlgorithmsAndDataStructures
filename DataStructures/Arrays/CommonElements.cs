@@ -8,7 +8,7 @@ namespace DataStructures.Arrays
 {
     public class CommonElements
     {
-        public int[] GetCommonElements(int[,] A, int n)
+        public static int[] GetCommonElements(int[,] A, int n)
         {
             int[] commonElements = new int[n];
             for (int i = 0; i < n; i++)
@@ -33,7 +33,7 @@ namespace DataStructures.Arrays
             return commonElements;
         }
 
-        public int[] GetCommonElementsUsingDictionary(int[,] A, int n) //Not Complete yet// Has Bug
+        public static int[] GetCommonElementsUsingDictionary(int[,] A, int n) //Not Complete yet// Has Bug
         {
             int[] commonElements = new int[n];
             Dictionary<int, int> commonElementsDict = new Dictionary<int, int>();

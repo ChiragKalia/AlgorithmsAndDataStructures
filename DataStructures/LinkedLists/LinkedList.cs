@@ -8,7 +8,7 @@ namespace DataStructures.LinkedLists
 {
     public class Node
     {
-        public int data;
+        public static int data;
         public Node next;
 
         public Node(int key)

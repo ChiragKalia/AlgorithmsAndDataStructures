@@ -9,9 +9,9 @@ namespace DataStructures.Trees
     #region BinaryTree
         public class Node
         {
-            public int val;
+            public static int val;
             public Node left, right;
-            public int depth;
+            public static int depth;
             public Node(int item)
             {
                 val = item;

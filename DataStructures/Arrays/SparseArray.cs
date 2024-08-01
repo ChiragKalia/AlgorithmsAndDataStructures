@@ -8,7 +8,7 @@ namespace DataStructures.Arrays
 {
     public class SparseArray
     {
-        public int[] calculateSparseArray(int n, int q, string[] A, string[] QA)
+        public static int[] calculateSparseArray(int n, int q, string[] A, string[] QA)
         {
             int[] result = new int[q];
             for (int i = 0; i < q; i++)

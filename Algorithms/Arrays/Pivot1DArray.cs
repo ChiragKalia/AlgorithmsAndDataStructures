@@ -8,7 +8,7 @@ namespace Algorithms.Arrays
 {
     public class Pivot1DArray
     {
-        public int[] RotateArrayRight(int[] x, int pivot)
+        public static int[] RotateArrayRight(int[] x, int pivot)
         {
             int[] r = x.Skip(pivot).Concat(x.Take(pivot)).ToArray();
             return r;

@@ -13,7 +13,7 @@ namespace DataStructures.Arrays
          * https://leetcode.com/problems/merge-intervals/
          * https://www.youtube.com/watch?v=IexN60k62jo
          */
-        public int[][] Merge(int[][] intervals)
+        public static int[][] Merge(int[][] intervals)
         {
             //First we sort the array then we perform the merging.
             Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));

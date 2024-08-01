@@ -9,7 +9,7 @@ namespace DataStructures.Arrays
     public class MaxSumSubarraySquareMatrix
     {
         //This method will return the maximum sum of a subarray in a square matrix
-        public int CalculateMaxSum(int [,] A, int n)
+        public static int CalculateMaxSum(int [,] A, int n)
         {
             int maxSum = 0;
             for(int i=0; i<n; i++)

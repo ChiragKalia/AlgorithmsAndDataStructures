@@ -9,7 +9,7 @@ namespace DataStructures.Arrays
 {
     public class BinaryArraySort
     {
-        public int[] sortBinaryArray(int[] A, int n)
+        public static int[] sortBinaryArray(int[] A, int n)
         {
             //My Method //Fail
             //int mid = (n - 1) / 2;

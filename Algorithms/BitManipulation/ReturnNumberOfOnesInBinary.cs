@@ -12,7 +12,7 @@ namespace Algorithms.BitManipulation
         // A function that returns number of one's(1) in a binary number
         //</summary>
         //<param name="a">binary number e.g(011)</param>
-        public int numSetBits(long a)
+        public static int numSetBits(long a)
         {
             int count = 0;
             while(a>0)
