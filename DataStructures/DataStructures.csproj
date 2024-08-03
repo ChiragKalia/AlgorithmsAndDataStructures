@@ -47,6 +47,7 @@
     <Compile Include="Arrays\CommonElements.cs" />
     <Compile Include="Arrays\FindDuplicate.cs" />
     <Compile Include="Arrays\FindMissingNumber.cs" />
+    <Compile Include="Arrays\FindMissingRepeatedNumbers.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
