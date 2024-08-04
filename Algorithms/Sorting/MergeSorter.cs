@@ -8,60 +8,54 @@ namespace Algorithms.Sorting
 {
     public class MergeSorter
     {
-        public static void MergeSort(int[] a)
+        //Uses Divide & Conquer Strategy. 
+        /*
+         * https://www.youtube.com/watch?v=ogjf7ORKfd8&t=3s
+         * We don't want to create temp arrays when recursing so playing with index instead
+         */
+        public static int[] MergeSort(int[] arr, int low, int high)
         {
-            int n = a.Length;
-            if (n<2)
+            if (low != high)
             {
-                return;
+                //First Divide
+                int mid = (low + high) / 2;
+                MergeSort(arr, low, mid);
+                MergeSort(arr, mid + 1, high);
+                //merge
+                Merge(arr, low, mid, high);
             }
-            int mid = n / 2;
-            int[] left = new int[mid];
-            int[] right = new int[n-mid];
-            for (int i = 0; i < mid; i++)
-            {
-                left[i] = a[i];
-            }
-            for(int j=n-mid; j<n; j++)
-            {
-                right[j-mid] = a[j];
-            }
-            MergeSort(left); //Recursive call to further divide the array into two parts
-            MergeSort(right); //Recursive call to further divide the array into two parts
-            Merge(left, right, a); //Pass the bisected array to merge method
+            return arr;
         }
-        public static void Merge(int[] L, int[] R,int[] A)
+
+        public static int[] Merge(int[] arr, int low, int mid, int high)
         {
-            int leftLength = L.Length;
-            int rightLength = R.Length;
-            int arrayLength = A.Length;
-            int i = 0, j = 0, k = 0; //Iterators
-            while (i < leftLength && j < rightLength)
+            List<int> temp = new List<int>();
+            int left = low;
+            int right = mid + 1;
+            while (left <= mid && right <= high)
             {
-                if (L[i] < R[j]) //Check which one's lower number
+                if (arr[left] <= arr[right])
                 {
-                    A[k] = L[i];
-                    i++; 
+                    temp.Add(arr[left++]);
                 }
-                if (R[j] < L[i])
+                else
                 {
-                    A[k] = R[j];
-                    j++;
+                    temp.Add(arr[right++]);
                 }
-                k++;
             }
-            while (i < leftLength)
+            while (left <= mid)
             {
-                A[k] = L[i];
-                i++;
-                k++; 
+                temp.Add(arr[left++]);
             }
-            while (j < rightLength)
+            while (right <= high)
             {
-                A[k] = R[j];
-                j++;
-                k++;
+                temp.Add(arr[right++]);
             }
+            for (int i = low; i <= high; i++)
+            {
+                arr[i] = temp[i - low];
+            }
+            return arr;
         }
     }
 }
