@@ -8,6 +8,12 @@ namespace Algorithms.Searching
 {
     public class BinarySearch2DMatrix
     {
+        /*
+         * Problem Statement: You have been given a 2-D array 'mat' of size 'M * N' where 'M' and 'N' denote the number of rows and columns, respectively. The elements of each row are sorted in non-decreasing order. Moreover, the first element of a row is greater than the last element of the previous row (if it exists). You are given an integer ‘target’, and your task is to find if it exists in the given 'mat' or not.
+
+         * https://www.youtube.com/watch?v=JXU4Akft7yk
+         * https://leetcode.com/problems/search-a-2d-matrix
+         */
         public static bool SearchJaggedMatrix(int[][] mat, int target)
         {
             int low = 0;
