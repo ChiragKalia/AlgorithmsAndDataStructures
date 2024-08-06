@@ -1,4 +1,5 @@
-﻿using System;
+//the time and space complexity is O(log(n)) and O(1)
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
