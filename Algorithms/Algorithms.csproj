@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AlgorithmsCrush\AlgorithmsCrush.cs" />
     <Compile Include="Arrays\MooresVoting.cs" />
+    <Compile Include="Arrays\MooresVotingII.cs" />
     <Compile Include="Arrays\Pivot1DArray.cs" />
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\ReturnNumberOfOnesInBinary.cs" />
