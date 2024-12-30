@@ -17,11 +17,11 @@ namespace DataStructures.Arrays
         1 5 10 10 5 1
 
         Observation - as you can see every row begins with 1 and the next element is row number - 1 ( 3rd row second element is 2), 4th row second element is 3
-
+        https://leetcode.com/problems/pascals-triangle/description/
         For more details: https://www.youtube.com/watch?v=bR7mQgwQ_o8
         */
 
-        public static long PrintElement(int row, int col)
+        public static long PrintElement(int row, int col) //Uses NcR method.
         {
             long element = 1;
             for (int i = 0; i < col; i++)
