@@ -15,8 +15,8 @@ namespace DataStructures.Arrays
          */
         public static int[][] Merge(int[][] intervals)
         {
-            //First we sort the array then we perform the merging.
-            Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));
+            // Step 1: Sort intervals by start time
+            Array.Sort(intervals, (x, y) => x[0] - y[0]);
 
             List<int[]> ans = new List<int[]>();
             ans.Add(intervals[0]);
@@ -27,7 +27,7 @@ namespace DataStructures.Arrays
                 {
                     ans.Add(intervals[i]);
                 }
-                else if (intervals[i][0] <= ans[ans.Count - 1][1])
+                else
                 {
                     ans[ans.Count - 1][1] = Math.Max(ans[ans.Count - 1][1], intervals[i][1]);
                 }

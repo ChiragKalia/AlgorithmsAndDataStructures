@@ -18,6 +18,7 @@ namespace DataStructures.Arrays
          */
         static int[][] Rotate(int[][] matrix)
         {
+            //First we transpose the matrix. 
             for (int i = 0; i < matrix.Length - 1; i++)
             {
                 for (int j = i; j < matrix[i].Length; j++)
@@ -27,6 +28,7 @@ namespace DataStructures.Arrays
                     matrix[j][i] = temp;
                 }
             }
+            //Then we reverse the matrix.
             for (int i = 0; i < matrix.Length; i++)
             {
                 Array.Reverse(matrix[i]);
