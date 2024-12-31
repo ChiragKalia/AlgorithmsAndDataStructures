@@ -12,33 +12,25 @@ namespace DataStructures.Arrays
         /*
          * https://takeuforward.org/data-structure/rotate-image-by-90-degree/
          * https://www.youtube.com/watch?v=Z0R2u6gd3GU
+         * https://leetcode.com/problems/rotate-image/
          * Problem Statement: Given a matrix, your task is to rotate the matrix
          * 90 degrees clockwise.
          */
-        static int[,] RotateImage90Degrees(int[,] matrix)
+        static int[][] Rotate(int[][] matrix)
         {
-
-            for (int i = 0; i < matrix.GetLength(1) - 1; i++)
+            for (int i = 0; i < matrix.Length - 1; i++)
             {
-                for (int j = i + 1; j < matrix.GetLength(0); j++)
+                for (int j = i; j < matrix[i].Length; j++)
                 {
-                    (matrix[i, j], matrix[j, i]) = (matrix[j, i], matrix[i, j]);
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
                 }
             }
-
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix.Length; i++)
             {
-                int start = 0;
-                int end = matrix.GetLength(1) - 1;
-
-                while (start < end)
-                {
-                    (matrix[i, start], matrix[i, end]) = (matrix[i, end], matrix[i, start]);
-                    start++;
-                    end--;
-                }
+                Array.Reverse(matrix[i]);
             }
-            return matrix;
         }
 
     }
