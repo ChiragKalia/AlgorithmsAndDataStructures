@@ -31,6 +31,7 @@ namespace DataStructures.Arrays
             {
                 Array.Reverse(matrix[i]);
             }
+            return matrix;
         }
 
     }
