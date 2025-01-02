@@ -13,6 +13,7 @@ namespace Algorithms.Searching
 
          * https://www.youtube.com/watch?v=JXU4Akft7yk
          * https://leetcode.com/problems/search-a-2d-matrix
+         * https://takeuforward.org/data-structure/search-in-a-sorted-2d-matrix/
          */
         public static bool SearchJaggedMatrix(int[][] mat, int target)
         {
