@@ -72,6 +72,7 @@
     <Compile Include="Arrays\SparseArray.cs" />
     <Compile Include="Arrays\SpiralArrayInsertion.cs" />
     <Compile Include="Arrays\SwapMinMax.cs" />
+    <Compile Include="Arrays\TwoSum.cs" />
     <Compile Include="Arrays\UniquePaths.cs" />
     <Compile Include="Helpers\PrintMatrix.cs" />
     <Compile Include="Helpers\SwapVars.cs" />
