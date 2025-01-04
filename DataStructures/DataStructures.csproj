@@ -62,6 +62,7 @@
     <Compile Include="Arrays\PowerExponentiation.cs" />
     <Compile Include="Arrays\RepetitiveElementsArray.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
+    <Compile Include="Arrays\ReversePairs.cs" />
     <Compile Include="Arrays\RotateArray.cs" />
     <Compile Include="Arrays\RotateMatrix.cs" />
     <Compile Include="Arrays\SetMatrixZeroes.cs" />
