@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmsCrush\AlgorithmsCrush.cs" />
+    <Compile Include="Arrays\FindDuplicate.cs" />
     <Compile Include="Arrays\MooresVoting.cs" />
     <Compile Include="Arrays\MooresVotingII.cs" />
     <Compile Include="Arrays\Pivot1DArray.cs" />

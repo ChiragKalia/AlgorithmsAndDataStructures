@@ -17,53 +17,59 @@ namespace Algorithms.Arrays
 
         public static IList<int> FindMajorityElements(int[] nums)
         {
-            
-            int el1 = Int32.MinValue, el2 = Int32.MinValue;
-            int cnt1 = 0, cnt2 = 0, n = nums.Length;
+            int cnt1 = 0, cnt2 = 0;
+            int? el1 = null, el2 = null; // Using nullable int to avoid default value issues
 
-            for (int i = 0; i < n; i++)
+            // Phase 1: Identify potential candidates
+            foreach (var num in nums)
             {
-                if (cnt1 == 0 && nums[i] != el2)
-                {
-                    cnt1 = 1;
-                    el1 = nums[i];
-                }
-                else if (cnt2 == 0 && nums[i] != el1)
-                {
-                    cnt2 = 1;
-                    el2 = nums[i];
-                }
-                else if (nums[i] == el1)
+                if (el1.HasValue && num == el1)
                 {
                     cnt1++;
                 }
-                else if (nums[i] == el2)
+                else if (el2.HasValue && num == el2)
                 {
                     cnt2++;
+                }
+                else if (cnt1 == 0)
+                {
+                    el1 = num;
+                    cnt1 = 1;
+                }
+                else if (cnt2 == 0)
+                {
+                    el2 = num;
+                    cnt2 = 1;
                 }
                 else
                 {
-                    cnt1--; cnt2--;
+                    cnt1--;
+                    cnt2--;
                 }
             }
-            cnt1 = 0; cnt2 = 0;
-            for (int i = 0; i < n; i++)
+
+            // Phase 2: Verify candidates
+            cnt1 = 0;
+            cnt2 = 0;
+
+            foreach (var num in nums)
             {
-                if (nums[i] == el1)
+                if (el1.HasValue && num == el1)
+                {
                     cnt1++;
-                else if (nums[i] == el2)
+                }
+                else if (el2.HasValue && num == el2)
+                {
                     cnt2++;
+                }
             }
-            List<int> res = new List<int>();
-            if (cnt1 > (nums.Length / 3))
-            {
-                res.Add(el1);
-            }
-            if (cnt2 > (nums.Length / 3))
-            {
-                res.Add(el2);
-            }
-            return res;
+
+            var result = new List<int>();
+            int threshold = nums.Length / 3;
+            if (cnt1 > threshold && el1.HasValue) result.Add(el1.Value);
+            if (cnt2 > threshold && el2.HasValue) result.Add(el2.Value);
+
+            return result;
         }
     }
 }
