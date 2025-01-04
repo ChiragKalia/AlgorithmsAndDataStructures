@@ -31,7 +31,7 @@ namespace Algorithms.Searching
         //<param name="mid">Middle index of array</param>
         //<param name="end">Ending index of array</param>
         //<param name="x">Element to be searched</param>
-        private int ApplyBinarySearch(int[] A, int start, int mid, int end, int x)
+        private static int ApplyBinarySearch(int[] A, int start, int mid, int end, int x)
         {
             if(index == -1)
             {
@@ -59,7 +59,7 @@ namespace Algorithms.Searching
         //</summary>
         //<param name="start">Starting index of array</param>
         //<param name="end">Ending index of array</param>
-        private int GetMiddleElement(int start, int end)
+        private static int GetMiddleElement(int start, int end)
         {
             return (start + end) / 2;
         }
