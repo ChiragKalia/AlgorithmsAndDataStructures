@@ -50,6 +50,7 @@
     <Compile Include="Arrays\FindDuplicate.cs" />
     <Compile Include="Arrays\FindMissingNumber.cs" />
     <Compile Include="Arrays\FindMissingRepeatedNumbers.cs" />
+    <Compile Include="Arrays\FourSum.cs" />
     <Compile Include="Arrays\GridUniquePaths.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Arrays\SparseArray.cs" />
     <Compile Include="Arrays\SpiralArrayInsertion.cs" />
     <Compile Include="Arrays\SwapMinMax.cs" />
+    <Compile Include="Arrays\ThreeSum.cs" />
     <Compile Include="Arrays\TwoSum.cs" />
     <Compile Include="Arrays\UniquePaths.cs" />
     <Compile Include="Helpers\PrintMatrix.cs" />
