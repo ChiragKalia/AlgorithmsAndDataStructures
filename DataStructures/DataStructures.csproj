@@ -52,6 +52,7 @@
     <Compile Include="Arrays\FindMissingRepeatedNumbers.cs" />
     <Compile Include="Arrays\FourSum.cs" />
     <Compile Include="Arrays\GridUniquePaths.cs" />
+    <Compile Include="Arrays\LongestConsecutiveSequence.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
     <Compile Include="Arrays\MaxSumSubarraySquareMatrix.cs" />
