@@ -38,7 +38,6 @@ namespace DataStructures.Arrays
                 }
             }
 
-            // If no such pair is found, return {-1, -1} indicating failure.
             return new int[] { -1, -1 };
         }
 

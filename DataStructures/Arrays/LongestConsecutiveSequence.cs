@@ -19,20 +19,17 @@ namespace DataStructures.Arrays
             if (nums.Length == 0)
                 return 0;
 
-            // Variable to store the longest consecutive sequence length.
             int longest = 0;
 
             // Use a HashSet to store the numbers for O(1) lookup.
             HashSet<int> set = new HashSet<int>(nums);
 
-            // Iterate through each number in the HashSet.
             foreach (int num in set)
             {
                 // Check if the current number is the start of a sequence.
                 // A number is the start of a sequence if `num - 1` is not in the set.
                 if (!set.Contains(num - 1))
                 {
-                    // Initialize a counter for the current sequence.
                     int cnt = 1;
 
                     // Check for subsequent numbers in the sequence.
@@ -44,7 +41,6 @@ namespace DataStructures.Arrays
                 }
             }
 
-            // Return the length of the longest consecutive sequence.
             return longest;
         }
     }

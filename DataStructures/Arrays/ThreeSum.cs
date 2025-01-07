@@ -15,7 +15,6 @@ namespace DataStructures.Arrays
         */
         public IList<IList<int>> FindThreeSum(int[] nums)
         {
-            // List to store the resulting triplets.
             IList<IList<int>> result = new List<IList<int>>();
 
             // Sort the array to enable the two-pointer approach and handle duplicates.
