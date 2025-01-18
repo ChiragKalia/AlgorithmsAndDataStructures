@@ -17,7 +17,8 @@ namespace DataStructures.Arrays
 
         public static int[] SortColors(int[] arr)
         {
-            int low = 0, mid = 0, high = arr.Length;
+            //Dutch National Flag Algorithm(3 pointer approach)
+            int low = 0, mid = 0, high = arr.Length -1; //Fixed minor mistake in high index
             while (mid <= high)
             {
                 if (arr[mid] == 0)
