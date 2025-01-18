@@ -18,21 +18,28 @@ namespace DataStructures.Arrays
          */
         static int[][] Rotate(int[][] matrix)
         {
-            //First we transpose the matrix. 
+            // Step 1: Transpose the matrix by swapping elements across its diagonal.
+            // For each element at position (i, j), swap it with the element at position (j, i).
             for (int i = 0; i < matrix.Length - 1; i++)
             {
-                for (int j = i; j < matrix[i].Length; j++)
+                for (int j = i + 1; j < matrix[i].Length; j++)
                 {
+                    // Swap elements matrix[i][j] and matrix[j][i].
                     int temp = matrix[i][j];
                     matrix[i][j] = matrix[j][i];
                     matrix[j][i] = temp;
                 }
             }
-            //Then we reverse the matrix.
+
+            // Step 2: Reverse each row of the matrix to complete the rotation.
+            // This transforms the transposed matrix into the rotated one.
             for (int i = 0; i < matrix.Length; i++)
             {
+                // Reverse the current row.
                 Array.Reverse(matrix[i]);
             }
+
+            // Return the rotated matrix.
             return matrix;
         }
 
