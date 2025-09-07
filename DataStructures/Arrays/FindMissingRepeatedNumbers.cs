@@ -13,20 +13,15 @@ namespace DataStructures.Arrays
          * https://takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/
          * https://www.youtube.com/watch?v=2D0D8HE6uak
          */
-        public static int[] FindMissingRepeatingNumber(int[] a)
+        public static int[] FindMissingRepeatingNumber(int[] nums)
         {
-            long n = a.Length;
+            long n = nums.Length;
             //S - SN (here we are taking the difference between sum of numbers in
             //the array and sum of n natural numbers) 
-            long S = 0, SN = (n * (n + 1)) / 2;
+            long S = nums.Sum(), SN = (n * (n + 1)) / 2;
             //S2 - S2N (difference of square sum of numbers in array and sum of
             //square of n natural numbers)
-            long S2 = 0, S2N = (n * (n + 1) * (2 * n + 1)) / 6;
-            for (int i = 0; i < n; i++)
-            {
-                S += a[i];
-                S2 += (long)a[i] * (long)a[i];
-            }
+            long S2 = nums.Sum(z=>z*z), S2N = (n * (n + 1) * (2 * n + 1)) / 6;
 
             long val1 = S - SN; //x - y
             long val2 = S2 - S2N;

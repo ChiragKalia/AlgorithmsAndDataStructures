@@ -54,7 +54,7 @@ namespace Algorithms.Searching
 
                 int mid = (low + high) / 2;
                 int row = mid / mat.GetLength(1); // index/m(no. of cols) 
-                int col = mid % mat.GetLength(1); // index/m(no. of rows)
+                int col = mid % mat.GetLength(1); // index%m(no. of cols)
 
                 if (mat[row, col] == target)
                 {
