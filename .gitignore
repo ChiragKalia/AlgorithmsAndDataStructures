@@ -1,11 +1,6 @@
-/AbstractProblems/obj
-/AbstractProblems/bin
-/Algorithms/bin
-/Algorithms/obj
-/DataStructures/obj
-/DataStructures/bin
-/MainProgram/obj
-/MainProgram/bin
 /.vs
 /bin
 /obj
+/DataStructures/obj/Debug
+/AbstractProblems/obj/Debug
+/MainProgram/obj/Debug
