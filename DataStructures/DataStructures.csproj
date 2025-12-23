@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays\AddTwoArrays.cs" />
+    <Compile Include="Arrays\AllPermutations.cs" />
     <Compile Include="Arrays\Arrays.cs" />
     <Compile Include="Arrays\BestTimeToBuySellStock.cs" />
     <Compile Include="Arrays\BinaryArraySort.cs" />
