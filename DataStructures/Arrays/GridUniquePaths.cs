@@ -20,8 +20,8 @@ namespace DataStructures.Arrays
             long res = 1; // Use long to handle larger values
             for (int i = 1; i <= r; i++)
             {
-                res *= (N - r + i);
-                res /= i;
+                //Doing both multiplication and division in the same step to avoid overflow.
+                res = res * (N - r + i) / i; 
             }
             return (int)res; // Cast to int as the final result
         }
