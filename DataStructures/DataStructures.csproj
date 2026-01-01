@@ -57,6 +57,7 @@
     <Compile Include="Arrays\LargestSubarray0Sum.cs" />
     <Compile Include="Arrays\LargestSubarrayKSum.cs" />
     <Compile Include="Arrays\LongestConsecutiveSequence.cs" />
+    <Compile Include="Arrays\LongestSubarrayWithSumK.cs" />
     <Compile Include="Arrays\LongestSubstringWithoutRepeatingCharacter.cs" />
     <Compile Include="Arrays\MaximumHourglassSum.cs" />
     <Compile Include="Arrays\MaxSumContiguousSubarray.cs" />
