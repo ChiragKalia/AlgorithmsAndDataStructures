@@ -14,23 +14,27 @@ namespace DataStructures.Arrays
         */
         public int LengthOfLongestSubstring(string s)
         {
-            int len = 0;
-            if (s.Length == 0) { return len; }
+            if (String.IsNullOrEmpty(s)) return 0;
+            int longest = 0;
+            HashSet<char> seen = new HashSet<char>();
+            int left = 0, right = 0;
 
-            int left = 0;
-            Dictionary<char, int> frequencyDict = new Dictionary<char, int>();
-
-            for (int right = 0; right < s.Length; right++)
+            while (right < s.Length)
             {
-                if (frequencyDict.ContainsKey(s[right]))
+                if (!seen.Add(s[right]))
                 {
-                    left = Math.Max(left, frequencyDict[s[right]] + 1); // Move the left pointer
+                    while (s[left] != s[right])
+                    {
+                        seen.Remove(s[left]);
+                        left++;
+                    }
+                    left++;
                 }
-                frequencyDict[s[right]] = right; // Update the character's index
-                len = Math.Max(len, right - left + 1); // Update the maximum length
-            }
 
-            return len;
+                right++;
+                longest = Math.Max(longest, right - left);
+            }
+            return longest;
         }
     }
 }
