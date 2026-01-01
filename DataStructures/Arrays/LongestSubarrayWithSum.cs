@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Arrays
 {
-    public class LongestSubarrayWithSumK
+    public class LongestSubarrayWithSum
     {
         /// <summary>
         /// Works for ALL integers (Positives, Negatives, and Zeros).
         /// Time Complexity: O(N) | Space Complexity: O(N)
         /// </summary>
-        public int LongestSubarrayWithSum(int[] nums, int target)
+        public int LongestSubarrayWithKSum(int[] nums, int target)
         {
             if (nums.Length == 0) return 0;
 
@@ -55,7 +55,7 @@ namespace DataStructures.Arrays
         /// ONLY works for non-negative integers (Positives and Zeros).
         /// Time Complexity: O(N) | Space Complexity: O(1)
         /// </summary>
-        int LongestSubarrayWithSumKPositives(int[] nums, int target)
+        public int LongestSubarrayWithSumKPositives(int[] nums, int target)
         {
             int left = 0;
             int currSum = 0;
@@ -80,6 +80,56 @@ namespace DataStructures.Arrays
                 {
                     // length = (end_index - start_index + 1)
                     longest = Math.Max(longest, right - left + 1);
+                }
+            }
+
+            return longest;
+        }
+
+        /// <summary>
+        /// Finds the length of the longest subarray that sums to zero.
+        /// This approach works for any array containing both positive and negative integers.
+        /// Logic: If the prefix sum is the same at two different indices, the numbers between 
+        /// those indices must have a total sum of zero.
+        /// Complexity: Time O(N) | Space O(N)
+        /// </summary>
+        int LongestSubarrayWithZeroSum(int[] nums)
+        {
+            if (nums.Length == 0) return 0;
+
+            int longest = 0;
+            int currSum = 0;
+
+            // Key: The running sum (prefix sum)
+            // Value: The FIRST index where we encountered this specific sum
+            Dictionary<int, int> map = new Dictionary<int, int>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                // 1. Update the running total
+                currSum += nums[i];
+
+                // 2. Check if the sequence starting from the very beginning (index 0) sums to zero
+                if (currSum == 0)
+                {
+                    longest = i + 1;
+                }
+                else
+                {
+                    // 3. If we've seen this exact 'currSum' before, it means the sum of 
+                    // elements between the previous occurrence and now is zero.
+                    if (map.ContainsKey(currSum))
+                    {
+                        // Calculate the distance between the first occurrence and current index
+                        // Note: We don't add 1 here because map[currSum] is the index BEFORE the zero-sum sequence starts
+                        longest = Math.Max(longest, i - map[currSum]);
+                    }
+                    else
+                    {
+                        // 4. Store the sum with its index. 
+                        // GREEDY: We only store the FIRST time we see a sum to ensure we get the longest possible distance.
+                        map.Add(currSum, i);
+                    }
                 }
             }
 
