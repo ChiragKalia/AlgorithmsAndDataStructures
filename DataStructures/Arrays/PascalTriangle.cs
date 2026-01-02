@@ -43,15 +43,12 @@ namespace DataStructures.Arrays
             long res = 1;
             long[] result = new long[row];
             result[0] = res;
-            Console.Write(res + " ");
             for (int i = 1; i < row; i++) //Every row starts from 1 as the 0th element so we skipped the first element of the row
             {
                 res *= (row - i);
                 res /= i;
                 result[i] = res;
-                Console.Write(res + " ");
             }
-            Console.WriteLine();
             return result;
         }
         public static void GeneratePascalTriangle(int totalNumberofRows) //O(n*n) complexity to print the whole tree
