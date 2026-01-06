@@ -16,20 +16,26 @@ namespace DataStructures.Arrays
         public IList<IList<int>> FindThreeSum(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
-            
-            if (nums.Length < 3) return result; // Not enough elements to form a triplet.
+            int n = nums.Length;
+            if (n < 3) return result; // Not enough elements to form a triplet.
 
             // Sort the array to enable the two-pointer approach and handle duplicates.
             Array.Sort(nums);
 
             // Iterate through the array to pick the first element of the triplet.
-            for (int i = 0; i < nums.Length -2; i++)  // Only go up to nums.Length - 2
+            for (int i = 0; i < n -2; i++)  // Only go up to nums.Length - 2
             {
                 // Since the array is sorted, no need to proceed if the first number is positive.
                 if (nums[i] > 0) break; 
 
                 // Skip duplicate elements to avoid duplicate triplets.
                 if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+                // 3. PRUNING: nums[i] is too small (even with the biggest numbers, sum < 0)
+                if ((long)nums[i] + nums[n - 1] + nums[n - 2] < 0) continue;
+
+                // 4. PRUNING: nums[i] is too big (even with the smallest numbers, sum > 0)
+                if ((long)nums[i] + nums[i + 1] + nums[i + 2] > 0) break;
 
                 // Initialize two pointers: 'j' starts after 'i', and 'k' starts at the end.
                 int j = i + 1;

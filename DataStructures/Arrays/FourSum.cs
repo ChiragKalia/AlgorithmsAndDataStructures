@@ -16,20 +16,36 @@ namespace DataStructures.Arrays
         public IList<IList<int>> FindFourSum(int[] nums, int target)
         {
             IList<IList<int>> result = new List<IList<int>>();
+            int n = nums.Length;
+            if (n < 4) return result;
             // Sort the array to facilitate the two-pointer approach and handle duplicates
             Array.Sort(nums);
-            // Outer loop for the first element of the quadruplet
-            for (int i = 0; i < nums.Length; i++)
+            // Outer loop for the first element of the quadruplet 
+            // Only need to go up to n - 3 because we need at least 4 elements.
+            for (int i = 0; i < n-3; i++)
             {
                 // Skip duplicates for the first element
                 if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+                // --- PRUNING FOR i ---
+                // 1. Current nums[i] is so small that even with the 3 largest numbers, it can't reach target
+                if ((long)nums[i] + nums[n - 1] + nums[n - 2] + nums[n - 3] < target) continue;
+                // 2. Current nums[i] is so large that even with the 3 smallest numbers, it exceeds target
+                if ((long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target) break;
+
                 // Second loop for the second element of the quadruplet
-                for (int j = i + 1; j < nums.Length; j++)
+                // Only need to go up to n - 2
+                for (int j = i + 1; j < n-2; j++)
                 {
                     // Skip duplicates for the second element
                     if (j != i + 1 && nums[j] == nums[j - 1]) continue;
+
+                    // --- PRUNING FOR j ---
+                    if ((long)nums[i] + nums[j] + nums[n - 1] + nums[n - 2] < target) continue;
+                    if ((long)nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target) break;
+
                     // Initialize two pointers for the remaining two elements
-                    int k = j + 1; int l = nums.Length - 1;
+                    int k = j + 1; int l = n - 1;
                     // Use the two-pointer technique to find pairs that sum to target
                     while (k < l)
                     {
