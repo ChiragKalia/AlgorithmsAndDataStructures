@@ -34,10 +34,9 @@ namespace DataStructures.Arrays
 
                 // If (currSum - target) exists in map, the subarray between 
                 // that old index and current index 'i' sums to target.
-                int neededGap = currSum - target;
-                if (map.ContainsKey(neededGap))
+                if (map.TryGetValue(currSum - target, out int startIndex))
                 {
-                    longest = Math.Max(longest, i - map[neededGap]);
+                    longest = Math.Max(longest, i - startIndex);
                 }
 
                 // GREEDY RULE: Only store the sum if we haven't seen it before.
