@@ -5,6 +5,7 @@ namespace DataStructures.LinkedLists
     public class ReverseLinkedList
     {
         /// <summary>
+        /// https://leetcode.com/problems/reverse-linked-list/
         /// Reverses a singly linked list iteratively.
         /// Time Complexity: O(n) - We visit each node exactly once.
         /// Space Complexity: O(1) - We only use a few pointer variables.

@@ -5,6 +5,7 @@ namespace DataStructures.LinkedLists
     public class MiddleLinkedList
     {
         /// <summary>
+        /// https://leetcode.com/problems/middle-of-the-linked-list/
         /// Finds the middle node of a singly linked list using Floyd's Tortoise and Hare algorithm.
         /// Time Complexity: O(n) - We traverse the list once.
         /// Space Complexity: O(1) - We only use two pointer variables.
