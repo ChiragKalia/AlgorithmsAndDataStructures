@@ -12,7 +12,7 @@ namespace DataStructures.LinkedLists
         /// Space Complexity: O(1)
         /// </summary>
         /// <param name="node">The node to be deleted. Guaranteed not to be the tail.</param>
-        public void DeleteNode(ListNode node)
+        public void DeleteNodefromLinkedList(ListNode node)
         {
             // 1. COPY DATA: Since we can't 'unhook' the current node from its predecessor,
             // we copy the data from the NEXT node into the CURRENT node.
