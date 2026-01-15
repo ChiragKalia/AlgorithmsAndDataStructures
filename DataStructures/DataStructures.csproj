@@ -87,6 +87,7 @@
     <Compile Include="Helpers\SwapVars.cs" />
     <Compile Include="LinkedLists\AddTwoNumbers.cs" />
     <Compile Include="LinkedLists\DeleteNode.cs" />
+    <Compile Include="LinkedLists\DetectCycle.cs" />
     <Compile Include="LinkedLists\FindIntersection.cs" />
     <Compile Include="LinkedLists\ListNode.cs" />
     <Compile Include="LinkedLists\MergeTwoLists.cs" />
