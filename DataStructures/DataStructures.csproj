@@ -92,6 +92,7 @@
     <Compile Include="LinkedLists\ListNode.cs" />
     <Compile Include="LinkedLists\MergeTwoLists.cs" />
     <Compile Include="LinkedLists\MiddleLinkedList.cs" />
+    <Compile Include="LinkedLists\PalindromeLinkedList.cs" />
     <Compile Include="LinkedLists\RemoveNthNode.cs" />
     <Compile Include="LinkedLists\ReverseLinkedList.cs" />
     <Compile Include="LinkedLists\ReverseNodesKGroup.cs" />
