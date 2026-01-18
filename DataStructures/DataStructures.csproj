@@ -97,6 +97,7 @@
     <Compile Include="LinkedLists\RemoveNthNode.cs" />
     <Compile Include="LinkedLists\ReverseLinkedList.cs" />
     <Compile Include="LinkedLists\ReverseNodesKGroup.cs" />
+    <Compile Include="LinkedLists\RotateLinkedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\BinaryTree.cs" />
     <Compile Include="Trees\BinarySearchTree.cs" />
