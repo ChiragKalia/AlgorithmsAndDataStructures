@@ -86,6 +86,7 @@
     <Compile Include="Helpers\PrintMatrix.cs" />
     <Compile Include="Helpers\SwapVars.cs" />
     <Compile Include="LinkedLists\AddTwoNumbers.cs" />
+    <Compile Include="LinkedLists\CloneLinkedList.cs" />
     <Compile Include="LinkedLists\DeleteNode.cs" />
     <Compile Include="LinkedLists\DetectCycle.cs" />
     <Compile Include="LinkedLists\DetectCycleII.cs" />
