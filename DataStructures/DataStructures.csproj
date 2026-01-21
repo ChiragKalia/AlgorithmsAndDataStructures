@@ -68,6 +68,7 @@
     <Compile Include="Arrays\PascalTriangle.cs" />
     <Compile Include="Arrays\PoisonousPlants.cs" />
     <Compile Include="Arrays\PowerExponentiation.cs" />
+    <Compile Include="Arrays\RemoveDuplicatesFromSortedArray.cs" />
     <Compile Include="Arrays\RepetitiveElementsArray.cs" />
     <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\ReversePairs.cs" />
