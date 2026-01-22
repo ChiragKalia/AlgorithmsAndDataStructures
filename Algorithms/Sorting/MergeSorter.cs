@@ -13,49 +13,51 @@ namespace Algorithms.Sorting
          * https://www.youtube.com/watch?v=ogjf7ORKfd8&t=3s
          * We don't want to create temp arrays when recursing so playing with index instead
          */
-        public static int[] MergeSort(int[] arr, int low, int high)
+        public int[] MergeSort(int[] nums, int low, int high)
         {
-            if (low != high)
-            {
-                //First Divide
-                int mid = (low + high) / 2;
-                MergeSort(arr, low, mid);
-                MergeSort(arr, mid + 1, high);
-                //merge
-                Merge(arr, low, mid, high);
-            }
-            return arr;
+            // Base case: if the range is 1 element or less, it's already sorted
+            if (low >= high) return nums;
+
+            // Calculate the middle point
+            int mid = low + (high - low) / 2;
+
+            // Recursive calls
+            MergeSort(nums, low, mid);
+            MergeSort(nums, mid + 1, high);
+
+            // Merge the sorted halves
+            return Merge(nums, low, mid, high);
         }
 
-        public static int[] Merge(int[] arr, int low, int mid, int high)
+        private int[] Merge(int[] nums, int low, int mid, int high)
         {
             List<int> temp = new List<int>();
             int left = low;
             int right = mid + 1;
+
+            // Standard merge logic
             while (left <= mid && right <= high)
             {
-                if (arr[left] <= arr[right])
+                if (nums[left] > nums[right])
                 {
-                    temp.Add(arr[left++]);
+                    temp.Add(nums[right++]);
                 }
                 else
                 {
-                    temp.Add(arr[right++]);
+                    temp.Add(nums[left++]);
                 }
             }
-            while (left <= mid)
+
+            // Collect remaining elements
+            while (left <= mid) temp.Add(nums[left++]);
+            while (right <= high) temp.Add(nums[right++]);
+
+            foreach (int num in temp)
             {
-                temp.Add(arr[left++]);
+                nums[low++] = num; // Assigns then increments low
             }
-            while (right <= high)
-            {
-                temp.Add(arr[right++]);
-            }
-            for (int i = low; i <= high; i++)
-            {
-                arr[i] = temp[i - low];
-            }
-            return arr;
+
+            return nums;
         }
     }
 }
