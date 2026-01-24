@@ -48,6 +48,7 @@
     <Compile Include="Arrays\Pivot1DArray.cs" />
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\ReturnNumberOfOnesInBinary.cs" />
+    <Compile Include="Greedy\MaxNMeetings.cs" />
     <Compile Include="Integers\GCDANDLCM.cs" />
     <Compile Include="Integers\CheckIfPrime.cs" />
     <Compile Include="Integers\HappyNumber.cs" />
