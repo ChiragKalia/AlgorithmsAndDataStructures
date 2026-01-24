@@ -49,6 +49,7 @@
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\ReturnNumberOfOnesInBinary.cs" />
     <Compile Include="Greedy\MaxNMeetings.cs" />
+    <Compile Include="Greedy\MinPlatformsRequired.cs" />
     <Compile Include="Integers\GCDANDLCM.cs" />
     <Compile Include="Integers\CheckIfPrime.cs" />
     <Compile Include="Integers\HappyNumber.cs" />
