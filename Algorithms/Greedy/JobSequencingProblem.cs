@@ -30,7 +30,10 @@ namespace Algorithms.Greedy
             // Index 'i' represents the time slot (Day i). 
             // We use maxDeadline + 1 so we can use the deadline value itself as an index.
             int[] schedule = new int[maxDeadline + 1];
-            Array.Fill(schedule, -1); // -1 indicates the slot is currently free.
+            for (int i = 0; i < schedule.Length; i++)
+            {
+                schedule[i] = -1; // -1 indicates the slot is currently free.
+            }
 
             int jobsCount = 0;
             int totalProfit = 0;

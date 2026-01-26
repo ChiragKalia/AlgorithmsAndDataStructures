@@ -5,6 +5,7 @@ namespace Algorithms.Greedy
     public class MinPlatformsRequired
     {
         /// <summary>
+        /// https://takeuforward.org/data-structure/minimum-number-of-platforms-required-for-a-railway
         /// Calculates the minimum number of platforms required so that no train waits.
         /// Logic: Treat arrivals and departures as independent events on a timeline.
         /// Time Complexity: O(N log N) - due to sorting the arrays.
