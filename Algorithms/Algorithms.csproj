@@ -48,6 +48,7 @@
     <Compile Include="Arrays\Pivot1DArray.cs" />
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\ReturnNumberOfOnesInBinary.cs" />
+    <Compile Include="Greedy\CoinChange.cs" />
     <Compile Include="Greedy\FractionalKnapsack.cs" />
     <Compile Include="Greedy\JobSequencingProblem.cs" />
     <Compile Include="Greedy\MaxNMeetings.cs" />
