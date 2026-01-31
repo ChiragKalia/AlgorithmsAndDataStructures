@@ -60,6 +60,9 @@
     <Compile Include="Integers\ReverseInteger.cs" />
     <Compile Include="Integers\SingleNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursion\CombinationSum.cs" />
+    <Compile Include="Recursion\SubsetII.cs" />
+    <Compile Include="Recursion\SubsetSum.cs" />
     <Compile Include="Searching\BinarySearch2DMatrix.cs" />
     <Compile Include="Searching\BinarySearching.cs" />
     <Compile Include="Sorting\InsertionSorter.cs" />
